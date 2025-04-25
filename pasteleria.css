@@ -1,0 +1,100 @@
+/*Estilos generales*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+/*Encabezado*/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ff5a6e;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.icons a {
+    margin: 0 10px;
+}
+
+/*Estilo de busqueda*/
+.buscar-torta {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.buscar-torta input {
+    width: 300px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+
+/*Estilo de productos*/
+.pasteleria {
+    padding: 20px;
+}
+
+.titulo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.titulo h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+.promo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 3fr));
+    gap: 10px;
+    justify-items: center;
+}
+
+.productos {   
+    background-color: #fff;
+    flex-wrap: wrap;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.productos img {
+    width: 200px;
+    border-radius: 5px;
+}
+
+.productos h3 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.productos p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+}

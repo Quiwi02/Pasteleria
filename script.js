@@ -43,3 +43,19 @@ window.addEventListener('click', function(event) {
         productos.style.display = 'none';
     }
 });
+
+// Aquí puedes agregar funcionalidades adicionales, como filtrado de productos
+document.querySelector('.buscar-torta input').addEventListener('input', function(event) {
+    const query = event.target.value.toLowerCase();
+    const productos = document.querySelectorAll('.productos');
+
+    productos.forEach(producto => {
+        const titulo = producto.querySelector('h3').textContent.toLowerCase();
+        if (titulo.includes(query)) {
+            producto.style.display = 'block';
+        } else {
+            producto.style.display = 'none';
+        }
+    });
+});
+
