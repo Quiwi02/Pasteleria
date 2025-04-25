@@ -1,15 +1,11 @@
-
-// Script para el menú lateral y carruseles
+// Script para el menú lateral
 document.addEventListener('DOMContentLoaded', function() {
-    var botonesMenu = document.querySelectorAll('.menu-btn');
-    botonesMenu.forEach(function(boton) {
-        boton.addEventListener('click', function() {
-            var menuLateral = document.getElementById('menuLateral');
-            if (menuLateral) {
-                menuLateral.classList.toggle('activo');
-            }
-        });
-    });
+    window.toggleMenu = function() {
+        var menuLateral = document.getElementById('menuLateral');
+        if (menuLateral) {
+            menuLateral.classList.toggle('activo');
+        }
+    };
     
     var botonCerrar = document.querySelector('.cerrar-menu');
     if (botonCerrar) {
@@ -23,19 +19,24 @@ document.addEventListener('DOMContentLoaded', function() {
     
     document.addEventListener('click', function(event) {
         var menuLateral = document.getElementById('menuLateral');
-        var menuBtn = document.querySelector('.menu-btn');
+        var menuBtn = document.querySelectorAll('.menu-btn');
         
-        if (menuLateral && menuLateral.classList.contains('activo') &&
-            !menuLateral.contains(event.target) && 
-            !menuBtn.contains(event.target)) {
+        if (menuLateral && menuLateral.classList.contains('activo')) {
+            let clickedOnButton = false;
+            menuBtn.forEach(function(btn) {
+                if (btn.contains(event.target)) {
+                    clickedOnButton = true;
+                }
+            });
             
-            menuLateral.classList.remove('activo');
+            if (!menuLateral.contains(event.target) && !clickedOnButton) {
+                menuLateral.classList.remove('activo');
+            }
         }
     });
     
     // ===== CARRUSELES =====
     if (typeof bootstrap !== 'undefined') {
-        // Inicializar el carrusel de San Valentín
         var carouselValentinEl = document.getElementById('carouselValentin');
         if (carouselValentinEl) {
             var carouselValentin = new bootstrap.Carousel(carouselValentinEl, {
@@ -73,17 +74,6 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('resize', adjustCarouselHeight);
 });
 
-function toggleMenu() {
-    var menuLateral = document.getElementById('menuLateral');
-    if (menuLateral) {
-        menuLateral.classList.toggle('activo');
-    }
-}
-
-function navegador() {
-    toggleMenu();
-}
-
 function adjustCarouselHeight() {
     if (window.innerWidth < 576) {
         const carouselItems = document.querySelectorAll('.carousel-item');
@@ -91,7 +81,7 @@ function adjustCarouselHeight() {
             const img = item.querySelector('img');
             if (img) {
                 const width = item.offsetWidth;
-                const aspectRatio = 0.75; 
+                const aspectRatio = 0.75;
                 img.style.height = width * aspectRatio + 'px';
             }
         });
