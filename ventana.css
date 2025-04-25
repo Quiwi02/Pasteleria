@@ -1,0 +1,292 @@
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #ff5a6e;
+}
+
+/* ===== NAVBAR ===== */
+.navbar-drossi {
+    background-color: #ff5a6e;
+    padding: 12px 0;
+    width: 100%;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+    margin-left: 10px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 25px;
+    padding: 6px 12px;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+.user-icon {
+    color: #999;
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 14px;
+    background: transparent;
+}
+
+.cart-btn {
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 22px;
+    cursor: pointer;
+    padding: 3px;
+    margin-right: 5px;
+}
+
+.logo-container {
+    margin-right: 10px;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ffcc00;
+}
+
+.cart-and-logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+
+
+/* ===== CARRUSEL===== */
+.promo-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 0 15px 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.promo-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.carousel {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.carousel-item img {
+    border-radius: 8px;
+    height: auto;
+    object-fit: cover;
+    width: 100%;
+}
+
+.custom-indicators {
+    position: relative;
+    justify-content: center;
+    margin: 10px 0 0;
+    bottom: auto;
+    left: auto;
+    right: auto;
+}
+
+.custom-indicators button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ccc;
+    border: none;
+    margin: 0 5px;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+
+.custom-indicators button.active {
+    background-color: #ff5a6e;
+    opacity: 1;
+}
+
+/* ===== MENU LATERAL ===== */
+.menu-lateral {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 280px;
+    height: 100vh;
+    background-color: white;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+    transition: left 0.3s ease;
+    padding: 20px;
+}
+
+.menu-lateral.activo {
+    left: 0;
+}
+
+.cerrar-menu {
+    text-align: right;
+    font-size: 24px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.menu-opciones {
+    list-style: none;
+    margin-top: 40px;
+}
+
+.menu-opciones li {
+    margin-bottom: 15px;
+}
+
+.menu-opciones a {
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    transition: color 0.3s;
+}
+
+.menu-opciones a:hover {
+    color: #ff5a6e;
+}
+
+/* ===== MEDIA QUERIES ===== */
+/* dispositivos pequeños */
+@media (max-width: 375px) {
+    .menu-btn {
+        font-size: 22px;
+        margin-left: 8px;
+    }
+    
+    .search-container {
+        padding: 5px 10px;
+    }
+    
+    .user-icon {
+        font-size: 14px;
+    }
+    
+    .search-input {
+        font-size: 13px;
+    }
+    
+    .cart-btn {
+        font-size: 20px;
+        margin-right: 3px;
+    }
+    
+    .logo {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .promo-card {
+        margin: 0 10px 15px;
+        padding: 12px;
+    }
+    
+    .promo-title {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+}
+
+/* dispositivos medianos */
+@media (min-width: 768px) {
+    .navbar-drossi {
+        padding: 15px 0;
+    }
+    
+    .search-col {
+        max-width: 350px;
+    }
+    
+    .menu-btn, .cart-btn {
+        font-size: 26px;
+    }
+    
+    .search-container {
+        padding: 8px 15px;
+    }
+    
+    .user-icon {
+        font-size: 18px;
+        margin-right: 10px;
+    }
+    
+    .search-input {
+        font-size: 16px;
+    }
+    
+    .logo {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .promo-card {
+        padding: 20px;
+        margin: 0 auto 20px;
+        max-width: 960px;
+    }
+    
+    .promo-title {
+        font-size: 22px;
+    }
+    
+    .carousel-item img {
+        max-height: 400px;
+    }
+}
+
+/* dispositivos grandes */
+@media (min-width: 992px) {
+    .navbar-drossi {
+        padding: 18px 0;
+    }
+    
+    .search-col {
+        max-width: 400px;
+    }
+    
+    .menu-btn, .cart-btn {
+        font-size: 28px;
+    }
+    
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
+}

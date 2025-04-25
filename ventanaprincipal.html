@@ -6,49 +6,136 @@
     <title>Aplicación D'Rossi</title>
     
     <link rel="icon" type="image/jpg" href="imagen/logopasteleria.jpg">
-
-    <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="ventana.css">
+    
     <!-- Agregando fuentes externas -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Para utilizar el sistema de grid con breakpoints -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-  <div class="ventanaprincipal">
-    <div class="principal">
-      <img class="navegacion" src="imagen/navegacion.png" alt="Menú de navegación" onclick="navegador()">
-      <img class="busqueda" src="imagen/busqueda.png" alt="Ícono de búsqueda">
-      <input class="opcion-buscar" type="text" id="textbusqueda" placeholder="Búsqueda">
-      <img class="carrito" src="imagen/carrito.png" alt="Carrito de compras">
-      <img class="logo" src="imagen/logopasteleria.jpg" alt="Logo de la pastelería">
+    <!-- Navbar para móviles -->
+    <nav class="navbar-drossi">
+        <div class="container-fluid p-0">
+            <div class="row g-0 align-items-center d-flex d-md-none">
+                <div class="col-2">
+                    <button class="menu-btn" onclick="toggleMenu()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+                <div class="col-7">
+                    <div class="search-container">
+                        <span class="user-icon">
+                            <i class="far fa-user"></i>
+                        </span>
+                        <input type="text" class="search-input" placeholder="Buscar">
+                    </div>
+                </div>
+                <div class="col-3 d-flex justify-content-end">
+                    <div class="cart-and-logo d-flex align-items-center">
+                        <button class="cart-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <div class="logo-container">
+                            <img src="imagen/logopasteleria.jpg" alt="Logo D'Rossi" class="logo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vista para tablets y desktop  -->
+            <div class="row g-0 align-items-center d-none d-md-flex">
+                <div class="col-auto">
+                    <button class="menu-btn" onclick="toggleMenu()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+                <div class="col-auto search-col">
+                    <div class="search-container">
+                        <span class="user-icon">
+                            <i class="far fa-user"></i>
+                        </span>
+                        <input type="text" class="search-input" placeholder="Buscar">
+                    </div>
+                </div>
+                <div class="col"></div>
+                <div class="col-auto d-flex align-items-center">
+                    <button class="cart-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
+                    <div class="logo-container">
+                        <img src="imagen/logopasteleria.jpg" alt="Logo D'Rossi" class="logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección de Carruseles -->
+    <div class="container-fluid p-0 mt-3">
+        <!-- Carrusel 1 -->
+        <div class="promo-card mb-3">
+            <h2 class="text-center promo-title">Promoción por el día de San Valentín</h2>
+            
+            <div id="carouselValentin" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="imagen/promocion1sanvalentin.jpg" class="d-block w-100" alt="Promoción San Valentín 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="imagen/promocion2sanvalentin.jpg" class="d-block w-100" alt="Promoción San Valentín 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="imagen/promocion3sanvalentin.jpg" class="d-block w-100" alt="Promoción San Valentín 3">
+                    </div>
+                </div>
+                
+                <div class="carousel-indicators custom-indicators">
+                    <button type="button" data-bs-target="#carouselValentin" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselValentin" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselValentin" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Carrusel 2: -->
+        <div class="promo-card mb-3">
+            <h2 class="text-center promo-title">Promoción por Fiesta de Promoción</h2>
+            
+            <div id="carouselPromocion" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="imagen/promocion1.jpeg" class="d-block w-100" alt="Promoción Fiesta 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="imagen/promocion2.jpg" class="d-block w-100" alt="Promoción Fiesta 2">
+                    </div>
+                </div>
+                
+                <div class="carousel-indicators custom-indicators">
+                    <button type="button" data-bs-target="#carouselPromocion" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselPromocion" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="promocion1">
-      <p class="text-promocion">Promoción por el día de San Valentín</p>
-      <img class="imagen1" src="imagen/promocion1sanvalentin.jpg" alt="Promoción 1 San Valentín">
-      <img class="imagen2" src="imagen/promocion2sanvalentin.jpg" alt="Promoción 2 San Valentín">
-      <img class="imagen3" src="imagen/promocion3sanvalentin.jpg" alt="Promoción 3 San Valentín">
+    <!-- Menú lateral -->
+    <div class="menu-lateral" id="menuLateral">
+        <div class="cerrar-menu" onclick="toggleMenu()">
+            <i class="fas fa-times"></i>
+        </div>
+        <ul class="menu-opciones">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="pasteleria.html">Pastelería</a></li>
+            <li><a href="cobertura.html">Cobertura</a></li>
+            <li><a href="contactanos.html">Contáctanos</a></li>
+            <li><a href="iniciosesion.html">Inicio de Sesión</a></li>
+        </ul>
     </div>
 
-    <div class="promocion2">
-      <p class="text-fiesta">Promoción por Fiesta de Promoción</p>
-      <img class="imagen4" src="imagen/promocion1.jpeg" alt="Promoción 1 Fiesta de Promoción">
-      <img class="imagen5" src="imagen/promocion2.jpg" alt="Promoción 2 Fiesta de Promoción">
-    </div>
-  </div>
-
-  <div class="menu" id="menu">
-    <button class="cerrar-menu">&times;</button>
-    <ul>
-      <li><a class="inicio" href="#inicio">Inicio</a></li>
-      <li><a class="pasteleria" href="pasteleria.html">Pastelería</a></li>
-      <li><a class="cobertura" href="#cobertura">Cobertura</a></li>
-      <li><a class="contactanos" href="#contactanos">Contáctanos</a></li>
-      <li><a class="inicioSesion" href="#iniciosesion.html">Inicio de Sesión</a></li>
-    </ul>
-  </div>
-
-  <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="ventana.js"></script>
 </body>
 </html>
-
-
