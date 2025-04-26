@@ -1,0 +1,46 @@
+/*Estilos generales*/
+* {
+    margin: 0%;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #F76369;
+}
+
+/*Estilo del encabezado*/
+header {
+    margin: 0%;
+    padding: 12px 0;
+    background-color: #F76369;
+}
+
+.carrito {
+    display: flex;
+    padding: 20px;
+}
+
+.carrito h2 {
+    font-size: 28px;
+    padding: 8px 0;
+}
+
+.carrito img {
+    width: 40px;
+    height: 40px;
+}
+
+.boton {
+    place-items:initial;
+    font-size: 16px;
+    border-radius: 4px;
+    background-color: white;
+}
+
+.boton img {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+
+}
