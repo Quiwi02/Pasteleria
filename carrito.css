@@ -31,9 +31,17 @@ header {
     height: 40px;
 }
 
+/*Estilo del boton recoger y delivery*/
+.botonEscoger {
+    padding: 20px;
+}
+
 .boton {
+    width: 100px;
+    height: 40px;
     place-items:initial;
     font-size: 16px;
+    color: #F76369;
     border-radius: 4px;
     background-color: white;
 }
@@ -44,3 +52,50 @@ header {
     vertical-align: middle;
 
 }
+
+/*Estilo de los productos*/
+.productos {
+    display: grid;
+    padding: 20px;
+}
+
+.textos {
+    padding: 20px;
+    display: grid;
+    font-size: 20px;
+}
+
+/*Estilo del boton confirmar y seguir comprando*/
+.botones {
+    margin: 20px;
+    display: grid;
+}
+
+.botonConfirmar {
+    width: 300px;
+    height: 48px;
+    margin: 10px;
+    font-size: 20px;
+    color: white;
+    background-color: #F76369;
+    border-color: white;
+}
+
+.botonComprar {
+    width: 300px;
+    height: 48px;
+    margin: 10px;
+    font-size: 20px;
+    color: #F76369;
+    background-color: white;
+    border-color: #F76369;
+}
+
+.botonConfirmar:active {
+    background-color: red;
+}
+
+.botonComprar:active {
+    background-color: red;
+}
+
