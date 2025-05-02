@@ -47,3 +47,41 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   });
+
+  // Script para el menú lateral
+document.addEventListener('DOMContentLoaded', function() {
+  window.togglePasteleria = function() {
+      var pasteleriaLateral = document.getElementById('pasteleriaLateral');
+      if (pasteleriaLateral) {
+          pasteleriaLateral.classList.toggle('activo');
+      }
+  };
+  
+  var botonCerrar = document.querySelector('.cerrar-pasteleria');
+  if (botonCerrar) {
+      botonCerrar.addEventListener('click', function() {
+          var pasteleriaLateral = document.getElementById('pasteleriaLateral');
+          if (pasteleriaLateral) {
+              pasteleriaLateral.classList.remove('activo');
+          }
+      });
+  }
+  
+  document.addEventListener('click', function(event) {
+      var pasteleriaLateral = document.getElementById('pasteleriaLateral');
+      var pasteleriaBtn = document.querySelectorAll('.pasteleria');
+      
+      if (pasteleriaLateral && pasteleriaLateral.classList.contains('activo')) {
+          let clickedOnButton = false;
+          pasteleriaBtn.forEach(function(btn) {
+              if (btn.contains(event.target)) {
+                  clickedOnButton = true;
+              }
+          });
+          
+          if (!pasteleriaLateral.contains(event.target) && !clickedOnButton) {
+              pasteleriaLateral.classList.remove('activo');
+          }
+      }
+  });
+});

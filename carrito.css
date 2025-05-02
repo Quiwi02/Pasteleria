@@ -31,6 +31,17 @@ header {
     height: 40px;
 }
 
+.carrito-btn {
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+    margin-left: 10px;
+}
+
+
 /*Estilo del boton recoger y delivery*/
 .botonEscoger {
     padding: 20px;
