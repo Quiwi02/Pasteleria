@@ -1,0 +1,120 @@
+/*Estilo general*/
+* {
+    margin: 0%;
+    padding: 0;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: white;
+}
+
+/*Estilo del encabezado*/
+header {
+    margin: 0%;
+    padding: 0;
+    position: relative;
+    background-color: #F76369;
+}
+
+img {
+    width: 60px;
+    height: 60px;
+    padding: 12px;
+    margin: 0%;
+    border-radius: 100px;
+}
+
+label {
+    font-size: 16px;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: relative;
+}
+
+.user img {
+    width: 50px;
+    height: 50px;
+    position: relative;
+}
+
+.usuario {
+    font-size: 16px;
+    color: black;
+    position: relative;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.carrito {
+    width: 50px;
+    height: 50px;
+    position: relative;
+}
+
+nav {
+    display: flex;
+    position: relative;
+}
+
+/*Estilo del contenido*/
+.contenido {
+    display: grid;
+    justify-items: center;
+}
+
+.boton {
+    margin: 10px;
+
+}
+
+button img {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.volver {
+    width: 100px;
+    height: 50px;
+    font-size: 16px;
+    border-color: transparent;
+    background-color: transparent;
+}
+
+.delivery {
+    justify-content: center;
+}
+
+.transito {
+    color: black;
+    justify-content: center;
+}
+
+.detalle {
+    display: flex;
+}
+
+.opciones {
+    letter-spacing: 40px;
+}
+
+.botones {
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    border-color: black;
+    background-color: white;
+    border-radius: 100px;
+}
+
+.imagenes {
+    position: relative;
+}
+
+.pasos {
+   position: relative;
+   display: flex;
+}
+
+/*Estilo general*/
