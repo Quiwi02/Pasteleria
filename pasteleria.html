@@ -1,249 +1,246 @@
 <!DOCTYPE html>
-<html lang="es"> 
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Pastelería D'Rossi - Tortas y bocaditos personalizados">
-  <title>Pastelería D'Rossi</title>
-  
-  <link rel="icon" type="image/jpg" href="imagen/logopasteleria.jpg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pastelería D'Rossi - Tortas y bocaditos personalizados">
+    <title>Pastelería D'Rossi</title>
+    <link rel="icon" type="image/jpg" href="imagen/logopasteleria.jpg">
     <link rel="stylesheet" href="pasteleria.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
-  <header class="container-fluid py-3">
-    <div class="container d-flex justify-content-between align-items-center">
-      <div class="col-2">
-        <button class="pasteleria" onclick="togglePasteleria()">
-            <i class="fas fa-bars"></i>
-        </button>
-      </div>
-      <div class="logo">
-        <a href="ventanaprincipal.html">
-          <img src="imagen/logopasteleria.jpg" alt="Logo D'Rossi" height="60">
-        </a>
-      </div>
-      
-      <nav class="navbar navbar-expand-lg">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarMain">
-          <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link" href="ventanaprincipal.html">Inicio</a></li>
-            <li class="nav-item"><a class="nav-link" href="cobertura.html">Cobertura</a></li>
-            <li class="nav-item"><a class="nav-link" href="iniciosesion.html">Inicio Sesión</a></li>
-          </ul>
+    <header class="container-fluid py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="logo">
+                <a href="ventanaprincipal.html">
+                    <img src="imagen/logopasteleria.jpg" alt="Logo D'Rossi" height="60">
+                </a>
+            </div>
+            <nav class="navbar navbar-expand-lg">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarMain">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="ventanaprincipal.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="cobertura.html">Cobertura</a></li>
+                        <li class="nav-item"><a class="nav-link" href="iniciosesion.html">Inicio Sesión</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- Carrito de compras -->
+            <div class="cart">
+                <a href="#" class="position-relative" onclick="abrirCarrito()">
+                    <i class="fas fa-shopping-cart fa-lg"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cart-count">
+                        0
+                        <span class="visually-hidden">productos en carrito</span>
+                    </span>
+                </a>
+            </div>
         </div>
-      </nav>
-      
-      <!-- Carrito de compras -->
-      <div class="cart">
-        <a href="carrito.html" class="position-relative">
-          <i class="fas fa-shopping-cart fa-lg"></i>
-          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-            0
-            <span class="visually-hidden">productos en carrito</span>
-          </span>
-        </a>
-      </div>
+    </header>
+
+    <main class="container py-4">
+        <!-- Buscador de productos -->
+        <section class="buscar-torta mb-4">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Buscar tortas o bocaditos" aria-label="Búsqueda">
+                <button class="btn btn-outline-secondary" type="button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- Tortas -->
+        <section class="pasteleria mb-5">
+            <div class="titulo">
+                <h2 class="mb-4">Tortas</h2>
+                <hr class="mb-4">
+            </div>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card h-100 producto">
+                        <img src="imagen/torta2.jpg" class="card-img-top" alt="Torta de Guanábana">
+                        <div class="card-body">
+                            <h3 class="card-title h5">Torta de Guanábana</h3>
+                            <p class="card-text">Hecha a base de biscochuelo de vainilla con chantilly y deliciosa pulpa de guanábana.</p>
+                            <p class="price fw-bold">S/ 40.00</p>
+                            <button class="btn btn-primary add-to-cart" data-id="1">Añadir al carrito</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 producto">
+                        <img src="imagen/torta4.jpg" class="card-img-top" alt="Torta crocante de vainilla">
+                        <div class="card-body">
+                            <h3 class="card-title h5">Torta crocante de vainilla</h3>
+                            <p class="card-text">Hecha a base de biscochuelo húmedo con deliciosos trozos crocantes.</p>
+                            <p class="price fw-bold">S/ 30.00</p>
+                            <button class="btn btn-primary add-to-cart" data-id="2">Añadir al carrito</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 producto">
+                        <img src="imagen/torta5.jpg" class="card-img-top" alt="Torta de frutas del bosque">
+                        <div class="card-body">
+                            <h3 class="card-title h5">Torta de frutas del bosque</h3>
+                            <p class="card-text">Hecha a base de biscochuelo con fresas, arándanos y moras frescas.</p>
+                            <p class="price fw-bold">S/ 25.00</p>
+                            <button class="btn btn-primary add-to-cart" data-id="3">Añadir al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Tortas personalizadas -->
+        <section class="pasteleria mb-5">
+            <div class="titulo">
+                <h2 class="mb-4">Tortas Personalizadas</h2>
+                <hr class="mb-4">
+            </div>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card h-100 producto">
+                        <img src="imagen/torta6.jpg" class="card-img-top" alt="Torta personalizada de cumpleaños">
+                        <div class="card-body">
+                            <h3 class="card-title h5">Torta Butter Cream</h3>
+                            <p class="card-text">Deliciosa torta personalizable con crema de mantequilla y decoraciones a elección.</p>
+                            <p class="price fw-bold">S/ 40.00</p>
+                            <button class="btn btn-primary add-to-cart" data-id="4">Añadir al carrito</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 producto">
+                        <img src="imagen/torta7.jpg" class="card-img-top" alt="Torta de Guanábana">
+                        <div class="card-body">
+                            <h3 class="card-title h5">Torta Tres Leches con Guanábana</h3>
+                            <p class="card-text">Hecha a base de biscochuelo humedecido en jarabe de tres leches con chantillí y pulpa de guanábana.</p>
+                            <p class="price fw-bold">S/ 40.00</p>
+                            <button class="btn btn-primary add-to-cart" data-id="5">Añadir al carrito</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 producto">
+                        <img src="imagen/torta8.jpg" class="card-img-top" alt="Torta crocante de vainilla">
+                        <div class="card-body">
+                            <h3 class="card-title h5">Torta Personalizada Temática</h3>
+                            <p class="card-text">Torta especial para eventos con diseños personalizados según tu ocasión.</p>
+                            <p class="price fw-bold">S/ 30.00</p>
+                            <button class="btn btn-primary add-to-cart" data-id="6">Añadir al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bocaditos -->
+        <section class="pasteleria mb-5">
+            <div class="titulo">
+                <h2 class="mb-4">Bocaditos</h2>
+                <hr class="mb-4">
+            </div>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card h-100 producto">
+                        <img src="imagen/bocadito1.jpg" class="card-img-top" alt="Alfajores">
+                        <div class="card-body">
+                            <h3 class="card-title h5">Alfajores</h3>
+                            <p class="card-text">Deliciosos alfajores rellenos de manjar blanco espolvoreados con azúcar glass.</p>
+                            <p class="price fw-bold">S/ 15.00 (docena)</p>
+                            <button class="btn btn-primary add-to-cart" data-id="7">Añadir al carrito</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 producto">
+                        <img src="imagen/bocadito3.jpg" class="card-img-top" alt="Mini cupcakes">
+                        <div class="card-body">
+                            <h3 class="card-title h5">Mini Cupcakes</h3>
+                            <p class="card-text">Deliciosos mini cupcakes decorados en diversos sabores.</p>
+                            <p class="price fw-bold">S/ 20.00 (docena)</p>
+                            <button class="btn btn-primary add-to-cart" data-id="8">Añadir al carrito</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 producto">
+                        <img src="imagen/bocadito4.jpg" class="card-img-top" alt="Profiteroles">
+                        <div class="card-body">
+                            <h3 class="card-title h5">Profiteroles</h3>
+                            <p class="card-text">Delicados profiteroles rellenos de crema pastelera o chantilly.</p>
+                            <p class="price fw-bold">S/ 25.00 (docena)</p>
+                            <button class="btn btn-primary add-to-cart" data-id="9">Añadir al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Carrito de compras -->
+    <div class="cart-modal" id="cart-modal">
+        <div class="cart-modal-content">
+            <span class="close-cart-modal">&times;</span>
+            <h2>Mi carrito</h2>
+            <div class="cart-items" id="cart-items">
+                <!-- Items will be injected here -->
+            </div>
+            <div class="cart-summary">
+                <p>Subtotal: S/ <span id="subtotal">0.00</span></p>
+                <p>Extras: S/ <span id="extras">0.00</span></p>
+                <p>Total: S/ <span id="total">0.00</span></p>
+                <button class="btn btn-primary" onclick="confirmarCompra()">Confirmar</button>
+                <button class="btn btn-secondary" onclick="seguirComprando()">Seguir comprando</button>
+            </div>
+        </div>
     </div>
-  </header>
 
-  <main class="container py-4">
-    <!-- Buscador de productos -->
-    <section class="buscar-torta mb-4">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Buscar tortas o bocaditos" aria-label="Búsqueda">
-        <button class="btn btn-outline-secondary" type="button">
-          <i class="fas fa-search"></i>
-        </button>
-      </div>
-    </section>
-
-    <!-- Tortas -->
-    <section class="pasteleria mb-5">
-      <div class="titulo">
-        <h2 class="mb-4">Tortas</h2>
-        <hr class="mb-4">
-      </div>
-
-      <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col">
-          <div class="card h-100 producto">
-            <img src="imagen/torta2.jpg" class="card-img-top" alt="Torta de Guanábana">
-            <div class="card-body">
-              <h3 class="card-title h5">Torta de Guanábana</h3>
-              <p class="card-text">Hecha a base de biscochuelo de vainilla con chantilly y deliciosa pulpa de guanábana.</p>
-              <p class="price fw-bold">S/ 40.00</p>
-              <button class="btn btn-primary add-to-cart" data-id="1">Añadir al carrito</button>
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h4>Contacto</h4>
+                    <address>
+                        <p><i class="fas fa-map-marker-alt"></i> Dirección</p>
+                        <p><i class="fas fa-phone"></i> +51 123-456-789</p>
+                        <p><i class="fas fa-envelope"></i> info@drossi.com</p>
+                    </address>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h4>Horarios</h4>
+                    <p>Lunes a Viernes: 9am - 7pm</p>
+                    <p>Sábados: 10am - 6pm</p>
+                    <p>Domingos: 10am - 2pm</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#" class="text-white me-2"><i class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-whatsapp fa-lg"></i></a>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card h-100 producto">
-            <img src="imagen/torta4.jpg" class="card-img-top" alt="Torta crocante de vainilla">
-            <div class="card-body">
-              <h3 class="card-title h5">Torta crocante de vainilla</h3>
-              <p class="card-text">Hecha a base de biscochuelo húmedo con deliciosos trozos crocantes.</p>
-              <p class="price fw-bold">S/ 30.00</p>
-              <button class="btn btn-primary add-to-cart" data-id="2">Añadir al carrito</button>
+            <div class="row mt-3">
+                <div class="col-12 text-center">
+                    <p>&copy; 2025 Pastelería D'Rossi. Todos los derechos reservados.</p>
+                </div>
             </div>
-          </div>
         </div>
+    </footer>
 
-        <div class="col">
-          <div class="card h-100 producto">
-            <img src="imagen/torta5.jpg" class="card-img-top" alt="Torta de frutas del bosque">
-            <div class="card-body">
-              <h3 class="card-title h5">Torta de frutas del bosque</h3>
-              <p class="card-text">Hecha a base de biscochuelo con fresas, arándanos y moras frescas.</p>
-              <p class="price fw-bold">S/ 25.00</p>
-              <button class="btn btn-primary add-to-cart" data-id="3">Añadir al carrito</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!--Tortas personalizadas -->
-    <section class="pasteleria mb-5">
-      <div class="titulo">
-        <h2 class="mb-4">Tortas Personalizadas</h2>
-        <hr class="mb-4">
-      </div>
-
-      <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col">
-          <div class="card h-100 producto">
-            <img src="imagen/torta6.jpg" class="card-img-top" alt="Torta personalizada de cumpleaños">
-            <div class="card-body">
-              <h3 class="card-title h5">Torta Butter Cream</h3>
-              <p class="card-text">Deliciosa torta personalizable con crema de mantequilla y decoraciones a elección.</p>
-              <p class="price fw-bold">S/ 40.00</p>
-              <button class="btn btn-primary add-to-cart" data-id="4">Añadir al carrito</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card h-100 producto">
-            <img src="imagen/torta7.jpg" class="card-img-top" alt="Torta de Guanábana">
-            <div class="card-body">
-              <h3 class="card-title h5">Torta Tres Leches con Guanábana</h3>
-              <p class="card-text">Hecha a base de biscochuelo humedecido en jarabe de tres leches con chantillí y pulpa de guanábana.</p>
-              <p class="price fw-bold">S/ 40.00</p>
-              <button class="btn btn-primary add-to-cart" data-id="5">Añadir al carrito</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card h-100 producto">
-            <img src="imagen/torta8.jpg" class="card-img-top" alt="Torta crocante de vainilla">
-            <div class="card-body">
-              <h3 class="card-title h5">Torta Personalizada Temática</h3>
-              <p class="card-text">Torta especial para eventos con diseños personalizados según tu ocasión.</p>
-              <p class="price fw-bold">S/ 30.00</p>
-              <button class="btn btn-primary add-to-cart" data-id="6">Añadir al carrito</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Bocaditos -->
-    <section class="pasteleria mb-5">
-      <div class="titulo">
-        <h2 class="mb-4">Bocaditos</h2>
-        <hr class="mb-4">
-      </div>
-
-      <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col">
-          <div class="card h-100 producto">
-            <img src="imagen/bocadito1.jpg" class="card-img-top" alt="Alfajores">
-            <div class="card-body">
-              <h3 class="card-title h5">Alfajores</h3>
-              <p class="card-text">Deliciosos alfajores rellenos de manjar blanco espolvoreados con azúcar glass.</p>
-              <p class="price fw-bold">S/ 15.00 (docena)</p>
-              <button class="btn btn-primary add-to-cart" data-id="7">Añadir al carrito</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card h-100 producto">
-            <img src="imagen/bocadito3.jpg" class="card-img-top" alt="Mini cupcakes">
-            <div class="card-body">
-              <h3 class="card-title h5">Mini Cupcakes</h3>
-              <p class="card-text">Deliciosos mini cupcakes decorados en diversos sabores.</p>
-              <p class="price fw-bold">S/ 20.00 (docena)</p>
-              <button class="btn btn-primary add-to-cart" data-id="8">Añadir al carrito</button>
-            </div>
-          </div>
-        </div>
-
-        
-        <div class="col">
-          <div class="card h-100 producto">
-            <img src="imagen/bocadito4.jpg" class="card-img-top" alt="Profiteroles">
-            <div class="card-body">
-              <h3 class="card-title h5">Profiteroles</h3>
-              <p class="card-text">Delicados profiteroles rellenos de crema pastelera o chantilly.</p>
-              <p class="price fw-bold">S/ 25.00 (docena)</p>
-              <button class="btn btn-primary add-to-cart" data-id="9">Añadir al carrito</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="bg-dark text-white py-4">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4 mb-3">
-          <h4>Contacto</h4>
-          <address>
-            <p><i class="fas fa-map-marker-alt"></i> Direccion</p>
-            <p><i class="fas fa-phone"></i> +51 123-456-789</p>
-            <p><i class="fas fa-envelope"></i> info@drossi.com</p>
-          </address>
-        </div>
-        <div class="col-md-4 mb-3">
-          <h4>Horarios</h4>
-          <p>Lunes a Viernes: 9am - 7pm</p>
-          <p>Sábados: 10am - 6pm</p>
-          <p>Domingos: 10am - 2pm</p>
-        </div>
-        <div class="col-md-4 mb-3">
-          <h4>Síguenos</h4>
-          <div class="social-links">
-            <a href="#" class="text-white me-2"><i class="fab fa-facebook-f fa-lg"></i></a>
-            <a href="#" class="text-white me-2"><i class="fab fa-instagram fa-lg"></i></a>
-            <a href="#" class="text-white me-2"><i class="fab fa-whatsapp fa-lg"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="row mt-3">
-        <div class="col-12 text-center">
-          <p>&copy; 2025 Pastelería D'Rossi. Todos los derechos reservados.</p>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" 
-    integrity="sha384-uDDQjHMzYZi+GdFaZCGDfWh4rbVxJhUMn4lZDyOjG8XrPgYDOAJg2Uv6K5N6yYW" 
-    crossorigin="anonymous"></script>
-  <script src="pasteleeria.js"></script>
-  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-uDDQjHMzYZi+GdFaZCGDfWh4rbVxJhUMn4lZDyOjG8XrPgYDOAJg2Uv6K5N6yYW"
+        crossorigin="anonymous"></script>
+    <script src="pasteleria.js"></script>
 </body>
 </html>
