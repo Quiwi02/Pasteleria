@@ -1,0 +1,146 @@
+/* General body styles */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    color: #FA4C58;
+}
+
+/* Header styles */
+header {
+    display: flex;
+    align-items: center;
+    background-color: #FA4C58;
+    padding: 15px 30px;
+    color: white;
+}
+
+header .logo img {
+    height: 50px;
+    width: auto;
+    border-radius: 100px;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+header nav li {
+    display: flex;
+    align-items: center;
+}
+
+header nav li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+header nav li a:hover {
+    color: white;
+}
+
+/* Content area */
+.contenido {
+    padding: 20px 30px;
+}
+
+.contenido .volver {
+    background-color: transparent;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.contenido .volver img {
+    height: 20px;
+    width: auto;
+}
+
+.contenido .volver:hover {
+    background-color: #999;
+}
+
+/* Procesos section */
+.procesos {
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.procesos label {
+    font-size: 25px;
+    font-weight: 700;
+    color: black;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.procesos input[type="textComentario"] {
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    width: 1000px;
+    height: 100px;
+    box-sizing: border-box;
+}
+
+.procesos input[type="textComentario"]:focus {
+    border-color: #ff6600;
+    box-shadow: 0 0 5px rgba(255, 102, 0, 0.5);
+}
+
+.procesos .botones {
+    background-color: #ED1E28;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center;
+    width: 400px;
+}
+
+.procesos .botones:hover {
+    background-color: red;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    header nav {
+        margin-left: 0;
+        gap: 15px;
+    }
+
+    .contenido, .procesos {
+        padding: 15px 20px;
+    }
+}

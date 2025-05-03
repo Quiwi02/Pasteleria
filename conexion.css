@@ -1,71 +1,285 @@
-/*Estilo general*/
-* {
-    padding: 0;
-    margin: 0%;
-    font-family: Arial, Helvetica, sans-serif;
-    box-shadow: none;
-}
-
+/* General body styles */
 body {
-    background-color: white;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    color: #000000;
 }
 
-/*estilo del encabezado*/
+/* Header styles */
 header {
     display: flex;
-    width: 100%;
-    height: 100px;
+    align-items: center;
     background-color: #FA4C58;
-}
-
-div img {
-    padding: 15px;
-    width: 70px;
-    height: 70px;
-    border-radius: 150px;
-}
-
-nav ul {
-    padding: 20px 100px;
-    margin: 10px;
-    display: flex;
-}
-
-nav a {
+    padding: 15px 30px;
     color: white;
 }
 
-nav li {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    padding: 1rem 2rem;
+header .logo img {
+    height: 60px;
+    width: auto;
+    border-radius: 100px;
 }
 
-.procesos {
-    width: 250px;
-    height: 70px;
-    padding: auto;
-    border-radius: 10px;
-    background-color: white;
-}
-
-.volver {
-    width: 150px;
-    height: 30px;
-    margin: 20px;
+header nav ul {
     display: flex;
+    align-items: center;
+    margin-left: auto;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: flex;
+    align-items: center;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Contenido section */
+.contenido {
+    display: flex;
+    padding: 20px 30px;
+}
+
+.contenido .volver {
     background-color: transparent;
-    font-family: 'Courier New', Courier, monospace;
-    vertical-align: middle;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: background-color 0.3s ease;
 }
 
-.volver img {
-    width: 20px;
+.contenido .volver img {
     height: 20px;
+    width: auto;
 }
 
-.procesos img {
-    width: 25px;
-    height: 25px;
+.contenido .volver:hover {
+    background-color: #999;
 }
 
+.contenido .texto label {
+    font-size: 30px;
+    font-weight: 700;
+    color: black;
+}
+
+/* Procesos sections */
+.procesos {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px 30px;
+    max-width: 500px;
+    margin: 20px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.procesos label {
+    font-size: 18px;
+    font-weight: 700;
+    color: black;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.procesos label button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.procesos label button img {
+    height: 20px;
+    width: auto;
+}
+
+.procesos .opciones {
+    display: flex;
+    gap: 15px;
+}
+
+.procesos .botones button {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.procesos .botones button:hover {
+    background-color: #e65c00;
+}
+
+.procesos p {
+    font-size: 16px;
+    color: #444;
+    margin: 0 0 10px 0;
+}
+
+.procesos input[type="textNum"] {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    width: 200px;
+    box-sizing: border-box;
+}
+
+.procesos input[type="textNum"]:focus {
+    border-color: #ff6600;
+    box-shadow: 0 0 5px rgba(255, 102, 0, 0.5);
+}
+
+.procesos .aplicar {
+    background-color: #2c3e2e;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    width: 100px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+}
+
+.procesos .aplicar:hover {
+    background-color: #ff6600;
+}
+
+/* Resumen pedido */
+.resumen-pedido {
+    padding: 20px 30px;
+    max-width: 600px;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.resumen-pedido .titulo label {
+    font-size: 22px;
+    font-weight: 700;
+    color: #2c3e2e;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.resumen-pedido .labels {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.resumen-pedido .contador {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.resumen-pedido .contador label {
+    font-weight: 600;
+}
+
+.resumen-pedido .contador a {
+    font-weight: 700;
+}
+
+.resumen-pedido .metodos {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.resumen-pedido .pagos {
+    flex: 1;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 12px 0;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.resumen-pedido .pagos:hover {
+    background-color: #e65c00;
+}
+
+.resumen-pedido .pago {
+    text-align: center;
+}
+
+.resumen-pedido .pagar {
+    background-color: #2c3e2e;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.resumen-pedido .pagar:hover {
+    background-color: #ff6600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .contenido {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .procesos {
+        padding: 15px 20px;
+    }
+
+    .resumen-pedido {
+        margin: 15px 10px;
+        max-width: 100%;
+    }
+}

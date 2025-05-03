@@ -1,14 +1,17 @@
 function volverAlInicio() {
-    window.location.href = "index.html";
+    window.location.href = "index.html"; // Adjust as needed
 }
-
-document.querySelectorAll('.ver-horarios').forEach(button => {
-    button.addEventListener('click', function() {
-        const horarios = this.nextElementSibling;
-        if (horarios.style.display === 'none' || horarios.style.display === '') {
-            horarios.style.display = 'block';
-        } else {
-            horarios.style.display = 'none';
-        }
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".ver-horarios").forEach(button => {
+        button.addEventListener("click", () => {
+            const horarios = button.nextElementSibling;
+            if (horarios.style.display === "block") {
+                horarios.style.display = "none";
+                button.textContent = "Ver horarios";
+            } else {
+                horarios.style.display = "block";
+                button.textContent = "Ocultar horarios";
+            }
+        });
     });
 });

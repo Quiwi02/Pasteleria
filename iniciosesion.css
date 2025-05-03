@@ -79,3 +79,7 @@ input {
     background-color: transparent;
 }
 
+    .botones button {
+        width: 100%;
+    }
+}
