@@ -1,61 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aplicación D'Rossi</title>
-    
     <link rel="icon" type="image/jpg" href="imagen/logopasteleria.jpg">
-
     <link rel="stylesheet" href="cobertura.css">
     <!-- Agregando fuentes externas -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <header class="cobertura">
         <div class="boton-volver">
-            <button type="submit">Volver al inicio</button>
+            <button type="button" onclick="volverAlInicio()">Volver al inicio</button>
         </div>
 
         <div class="title">
             <h2>Nuestra cobertura</h2>
-            <p>Ingresa tu dirección parar encontrar el local más cercano a ti.</p>
+            <p>Ingresa tu dirección para encontrar el local más cercano a ti.</p>
         </div>
 
-        <div class="Ingresar-direccion">
+        <div class="ingresar-direccion">
             <input type="text" placeholder="Ingresar dirección">
-        </div>
-
-        <div class="ubicacion">
-            <button>Usar ubicacion actual</button>
+            <button>Usar ubicación actual</button>
         </div>
 
         <section class="contenido">
             <div class="informacion">
-                <h3><li>Imaculada</li></h3>
-
-                <button type="submit">Ordena aqui</button>
-
+                <h3>Manu Inmaculada</h3>
+                <button type="button" class="ordenar-aqui">Ordena aquí</button>
                 <button disabled="disabled">Recojo en tienda</button>
                 <button disabled="disabled">Delivery</button>
+                <p>Jr. Inmaculada 590, Pucallpa, Perú</p>
+                <p>Teléfono: 973338295</p>
+                <p>Horarios (cerrado)</p>
+                <button type="button" class="ver-horarios">Ver horarios</button>
+                <ul class="horarios">
+                    <li>Lunes: 08:00 am - 10:00 pm</li>
+                    <li>Martes: 08:00 am - 10:00 pm</li>
+                    <li>Miércoles: 08:00 am - 10:00 pm</li>
+                    <li>Jueves: 08:00 am - 10:00 pm</li>
+                    <li>Viernes: 08:00 am - 10:00 pm</li>
+                    <li>Sábado: 08:00 am - 10:00 pm</li>
+                    <li>Domingo: 08:00 am - 10:00 pm</li>
+                </ul>
+            </div>
 
-                <a>Jr. Inmaculada 590, Pucallpa, Perú</a>
-                <a>Teléfono: 973338295</a>
-                <a>Horarios(Abierto)</a>
-                <button type="reset">Ver horarios</button>
-
-                <ul>
-                    <a>Lunes: 08:00 am - 10:00 pm</a>
-                    <a>Martes: 08:00 am - 10:00 pm</a>
-                    <a>Miércoles: 08:00 am - 10:00 pm</a>
-                    <a>Jueves: 08:00 am - 10:00 pm</a>
-                    <a>Viernes: 08:00 am - 10:00 pm</a>
-                    <a>Sábado: 08:00 am - 10:00 pm</a>
-                    <a>Domingo: 08:00 am - 10:00 pm</a>    
+            <div class="informacion">
+                <h3>Manu Plaza de armas</h3>
+                <button type="button" class="ordenar-aqui">Ordena aquí</button>
+                <button disabled="disabled">Recojo en tienda</button>
+                <button disabled="disabled">Delivery</button>
+                <p>Jr. Tarapacá 637, Pucallpa</p>
+                <p>Teléfono: 973338295</p>
+                <p>Horarios (cerrado)</p>
+                <button type="button" class="ver-horarios">Ver horarios</button>
+                <ul class="horarios">
+                    <li>Lunes: 08:00 am - 10:00 pm</li>
+                    <li>Martes: 08:00 am - 10:00 pm</li>
+                    <li>Miércoles: 08:00 am - 10:00 pm</li>
+                    <li>Jueves: 08:00 am - 10:00 pm</li>
+                    <li>Viernes: 08:00 am - 10:00 pm</li>
+                    <li>Sábado: 08:00 am - 10:00 pm</li>
+                    <li>Domingo: 08:00 am - 10:00 pm</li>
                 </ul>
             </div>
         </section>
 
+        <div class="mapa">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3899.759920129823!2d-74.55997897499999!3d-10.34958697724954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91a5c6d7d7d7d7d7%3A0x9c8e7e7e7e7e7e7e!2sManu%20Caf%C3%A9!5e0!3m2!1sen!2ses!4v1698353535353!5m2!1sen!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
     </header>
 </body>
 </html>
