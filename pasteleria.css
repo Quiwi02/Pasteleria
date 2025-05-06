@@ -418,3 +418,95 @@ footer p {
   color: black;
   text-decoration: none;
 }
+
+/* ===== NAVBAR ===== */
+.menu-btn {
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 5px;
+  margin-left: 10px;
+}
+
+
+/* ===== MENU LATERAL ===== */
+.menu-lateral {
+  position: fixed;
+  top: 0;
+  left: -280px;
+  width: 280px;
+  height: 100vh;
+  background-color: white;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+  transition: left 0.3s ease;
+  padding: 20px;
+}
+
+.menu-lateral.activo {
+  left: 0;
+}
+
+.cerrar-menu {
+  text-align: right;
+  font-size: 24px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.menu-opciones {
+  list-style: none;
+  margin-top: 40px;
+}
+
+.menu-opciones li {
+  margin-bottom: 15px;
+}
+
+.menu-opciones a {
+  color: #333;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  transition: color 0.3s;
+}
+
+.menu-opciones a:hover {
+  color: #ff5a6e;
+}
+
+/* ===== MEDIA QUERIES ===== */
+/* dispositivos pequeños */
+@media (max-width: 375px) {
+  .menu-btn {
+      font-size: 22px;
+      margin-left: 8px;
+  }
+}
+
+/* dispositivos medianos */
+@media (min-width: 768px) {
+  .navbar-drossi {
+      padding: 15px 0;
+  }
+  
+  .menu-btn {
+      font-size: 26px;
+  }
+}
+
+/* dispositivos grandes */
+@media (min-width: 992px) {
+  .navbar-drossi {
+      padding: 18px 0;
+  }
+  
+  .menu-btn{
+      font-size: 28px;
+  }
+}
+

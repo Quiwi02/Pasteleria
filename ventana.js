@@ -91,3 +91,41 @@ function adjustCarouselHeight() {
         });
     }
 }
+
+// Script para el carrito de compras
+document.addEventListener('DOMContentLoaded', function() {
+    window.toggleCart = function() {
+        var carritocompras = document.getElementById('carritocompras');
+        if (carritocompras) {
+            carritocompras.classList.toggle('activo');
+        }
+    };
+    
+    var botonCerrar = document.querySelector('.cerrar-carrito');
+    if (botonCerrar) {
+        botonCerrar.addEventListener('click', function() {
+            var carritocompras = document.getElementById('carritocompras');
+            if (carritocompras) {
+                carritocompras.classList.remove('activo');
+            }
+        });
+    }
+    
+    document.addEventListener('click', function(event) {
+        var carritocompras = document.getElementById('carritocompras');
+        var carritoBtn = document.querySelectorAll('.cart-btn');
+        
+        if (carritocompras && carritocompras.classList.contains('activo')) {
+            let clickedOnButton = false;
+            carritoBtn.forEach(function(btn) {
+                if (btn.contains(event.target)) {
+                    clickedOnButton = true;
+                }
+            });
+            
+            if (!carritocompras.contains(event.target) && !clickedOnButton) {
+                carritocompras.classList.remove('activo');
+            }
+        }
+    });
+});

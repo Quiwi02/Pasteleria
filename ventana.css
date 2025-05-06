@@ -290,3 +290,94 @@ body {
         height: 50px;
     }
 }
+
+
+/* ===== NAVBAR CARRITO ===== */
+.cart-btn {
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+/* ===== CARRITO ===== */
+.carrito {
+    position: fixed;
+    top: 0;
+    right: -280px;
+    width: 280px;
+    height: 100vh;
+    background-color: #F76369;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+    transition: left 0.3s ease;
+    padding: 20px;
+}
+
+.carrito.activo {
+    right: 0;
+}
+
+.cerrar-carrito {
+    text-align: left;
+    font-size: 24px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.carrito-opciones {
+    list-style: none;
+    margin-top: 40px;
+}
+
+.carrito-opciones a:hover {
+    color: #ff5a6e;
+}
+
+.carrito-opciones button {
+    color: black;
+    border-radius: 4px;
+    width: 100px;
+    height: 30px;
+    vertical-align: middle;
+}
+
+.carrito img {
+    width: 25px;
+    height: auto;
+
+}
+
+/* ===== MEDIA QUERIES ===== */
+/* dispositivos pequeños */
+@media (max-width: 375px) {
+    .cart-btn {
+        font-size: 22px;
+        margin-left: 8px;
+    }
+}
+
+/* dispositivos medianos */
+@media (min-width: 768px) {
+    .navbar-drossi {
+        padding: 15px 0;
+    }
+    
+    .cart-btn {
+        font-size: 26px;
+    }
+}
+
+/* dispositivos grandes */
+@media (min-width: 992px) {
+    .navbar-drossi {
+        padding: 18px 0;
+    }
+    
+    .cart-btn{
+        font-size: 28px;
+    }
+}
