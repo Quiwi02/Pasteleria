@@ -419,6 +419,10 @@ footer p {
   text-decoration: none;
 }
 
+
+
+
+
 /* ===== NAVBAR ===== */
 .menu-btn {
   background: none;
@@ -428,6 +432,16 @@ footer p {
   cursor: pointer;
   padding: 5px;
   margin-left: 10px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 25px;
+  padding: 6px 12px;
+  width: 100%;
+  border: 1px solid #ddd;
 }
 
 
@@ -486,6 +500,10 @@ footer p {
       font-size: 22px;
       margin-left: 8px;
   }
+  
+  .search-container {
+      padding: 5px 10px;
+  }
 }
 
 /* dispositivos medianos */
@@ -494,8 +512,16 @@ footer p {
       padding: 15px 0;
   }
   
+  .search-col {
+      max-width: 350px;
+  }
+  
   .menu-btn {
       font-size: 26px;
+  }
+  
+  .search-container {
+      padding: 8px 15px;
   }
 }
 
@@ -505,8 +531,11 @@ footer p {
       padding: 18px 0;
   }
   
-  .menu-btn{
+  .search-col {
+      max-width: 400px;
+  }
+  
+  .menu-btn {
       font-size: 28px;
   }
 }
-

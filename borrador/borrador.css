@@ -1,69 +1,85 @@
 
-/* ===== NAVBAR CARRITO ===== */
-.cart-btn {
+
+/* ===== NAVBAR ===== */
+.menu-btn {
     background: none;
     border: none;
     color: #333;
     font-size: 24px;
     cursor: pointer;
     padding: 5px;
-    margin-right: 10px;
+    margin-left: 10px;
 }
 
-/* ===== CARRITO ===== */
-.carrito {
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 25px;
+    padding: 6px 12px;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+
+/* ===== MENU LATERAL ===== */
+.menu-lateral {
     position: fixed;
     top: 0;
-    right: -280px;
+    left: -280px;
     width: 280px;
     height: 100vh;
-    background-color: #F76369;
+    background-color: white;
     box-shadow: 2px 0 5px rgba(0,0,0,0.1);
     z-index: 1000;
     transition: left 0.3s ease;
     padding: 20px;
 }
 
-.carrito.activo {
-    right: 0;
+.menu-lateral.activo {
+    left: 0;
 }
 
-.cerrar-carrito {
-    text-align: left;
+.cerrar-menu {
+    text-align: right;
     font-size: 24px;
     margin-bottom: 20px;
     cursor: pointer;
 }
 
-.carrito-opciones {
+.menu-opciones {
     list-style: none;
     margin-top: 40px;
 }
 
-.carrito-opciones a:hover {
+.menu-opciones li {
+    margin-bottom: 15px;
+}
+
+.menu-opciones a {
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    transition: color 0.3s;
+}
+
+.menu-opciones a:hover {
     color: #ff5a6e;
-}
-
-.carrito-opciones button {
-    color: black;
-    border-radius: 4px;
-    width: 100px;
-    height: 30px;
-    vertical-align: middle;
-}
-
-.carrito img {
-    width: 25px;
-    height: auto;
-
 }
 
 /* ===== MEDIA QUERIES ===== */
 /* dispositivos pequeños */
 @media (max-width: 375px) {
-    .cart-btn {
+    .menu-btn {
         font-size: 22px;
         margin-left: 8px;
+    }
+    
+    .search-container {
+        padding: 5px 10px;
     }
 }
 
@@ -73,8 +89,16 @@
         padding: 15px 0;
     }
     
-    .cart-btn {
+    .search-col {
+        max-width: 350px;
+    }
+    
+    .menu-btn {
         font-size: 26px;
+    }
+    
+    .search-container {
+        padding: 8px 15px;
     }
 }
 
@@ -84,7 +108,11 @@
         padding: 18px 0;
     }
     
-    .cart-btn{
+    .search-col {
+        max-width: 400px;
+    }
+    
+    .menu-btn {
         font-size: 28px;
     }
 }
