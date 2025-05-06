@@ -1,54 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Borrador</title>
-
     <link rel="stylesheet" href="borrador.css">
-
-    <!-- Agregando fuentes externas -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Para utilizar el sistema de grid con breakpoints -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Navbar para móviles -->
-    <nav class="navbar-drossi">
-        <div class="container-fluid p-0">
-            <div class="row g-0 align-items-center d-flex d-md-none">
-                <div class="col-2">
-                    <button class="menu-btn" onclick="toggleMenu()">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
-            </div>
+    <div class="container">
+        <!-- Contenedor del logo -->
+        <div class="logo-container">
+            <img src="imagen/logopasteleria.jpg" alt="Logo D'Rossi">
+        </div>
 
-            <!-- Vista para tablets y desktop  -->
-            <div class="row g-0 align-items-center d-none d-md-flex">
-                <div class="col-auto">
-                    <button class="menu-btn" onclick="toggleMenu()">
-                        <i class="fas fa-bars"></i>
-                    </button>
+        <!-- Contenedor del formulario -->
+        <div class="form-container">
+            <h2>Inicio de sesión</h2>
+            <form>
+                <div class="entrada">
+                    <label for="email">Usuario o email</label>
+                    <input type="text" id="email" placeholder="Usuario o email">
                 </div>
+                <div class="entrada">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" placeholder="Contraseña">
+                </div>
+            </form>
+            <div class="imagenes">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-google"></i>
+            </div>
+            <div class="botoninicio">
+                <button class="inisiosesion">Iniciar sesión</button>
+                <button class="Registrarse">Registrate</button>
             </div>
         </div>
-    </nav>
-    <!-- Menú lateral -->
-    <div class="menu-lateral" id="menuLateral">
-        <div class="cerrar-menu" onclick="toggleMenu()">
-            <i class="fas fa-times"></i>
-        </div>
-        <ul class="menu-opciones">
-            <li><a href="ventanaprincipal.html">Inicio</a></li>
-            <li><a href="cobertura.html">Cobertura</a></li>
-            <li><a href="detallepedido.html">Detalle de pedido</a></li>
-            <li><a href="iniciosesion.html">Inicio de Sesión</a></li>
-        </ul>
     </div>
-
-    <script src="borrador.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
