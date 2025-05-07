@@ -1,19 +1,22 @@
-/* General body styles */
-body {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #ffffff;
+/* EStilo general */
+* {
     margin: 0;
     padding: 0;
     color: #000000;
+    font-family: 'Segoe UI', sans-serif;
+}
+body {
+    background-color: #ffffff;
 }
 
-/* Header styles */
+/* Estilo del encabezado */
 header {
     display: flex;
     align-items: center;
     background-color: #FA4C58;
     padding: 15px 30px;
     color: white;
+    flex-wrap: wrap;
 }
 
 header .logo img {
@@ -29,6 +32,8 @@ header nav ul {
     gap: 20px;
     list-style: none;
     padding: 0;
+    width: 100%;
+    justify-content: flex-end;
 }
 
 header nav ul li {
@@ -45,10 +50,12 @@ header nav ul li a {
     gap: 5px;
 }
 
-/* Contenido section */
+/* EStilo del contenido */
 .contenido {
     display: flex;
     padding: 20px 30px;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .contenido .volver {
@@ -74,17 +81,19 @@ header nav ul li a {
     background-color: #999;
 }
 
-.contenido .texto label {
+.texto label {
     font-size: 30px;
     font-weight: 700;
     color: black;
+    padding: 10px 20px;
+    margin-left: auto;
 }
 
-/* Procesos sections */
+/* EStilo de los procesos */
 .procesos {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 10px;
     padding: 20px 30px;
     max-width: 500px;
     margin: 20px;
@@ -115,15 +124,16 @@ header nav ul li a {
     width: auto;
 }
 
-.procesos .opciones {
+.procesos .botones {
     display: flex;
     gap: 15px;
+    flex-wrap: wrap;
 }
 
 .procesos .botones button {
-    background-color: #ff6600;
-    color: white;
-    border: none;
+    background-color: white;
+    color: black;
+    border: 1px solid #ddd;
     padding: 12px 25px;
     border-radius: 8px;
     font-size: 16px;
@@ -133,7 +143,8 @@ header nav ul li a {
 }
 
 .procesos .botones button:hover {
-    background-color: #e65c00;
+    background-color: red;
+    color: white;
 }
 
 .procesos p {
@@ -153,12 +164,12 @@ header nav ul li a {
 }
 
 .procesos input[type="textNum"]:focus {
-    border-color: #ff6600;
+    border-color: black;
     box-shadow: 0 0 5px rgba(255, 102, 0, 0.5);
 }
 
 .procesos .aplicar {
-    background-color: #2c3e2e;
+    background-color: red;
     color: white;
     border: none;
     padding: 12px 20px;
@@ -168,19 +179,20 @@ header nav ul li a {
     font-weight: 700;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-left: 10px;
+    margin-left: 190px;
+    margin-top: -55px;
 }
 
 .procesos .aplicar:hover {
-    background-color: #ff6600;
+    background-color: #ED1E28;
 }
 
 /* Resumen pedido */
 .resumen-pedido {
     padding: 20px 30px;
-    max-width: 600px;
-    margin: 20px auto;
-    border: 1px solid #ddd;
+    width: 800px;
+    height: 490px;
+    margin: -550px 600px;
     border-radius: 12px;
     background-color: #fff;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -189,7 +201,7 @@ header nav ul li a {
 .resumen-pedido .titulo label {
     font-size: 22px;
     font-weight: 700;
-    color: #2c3e2e;
+    color: black;
     display: block;
     margin-bottom: 15px;
 }
@@ -219,26 +231,45 @@ header nav ul li a {
     font-weight: 700;
 }
 
+.metodo {
+    font-size: 18px;
+    font-weight: 700;
+    color: black;
+    padding: 10px 20px;
+    margin-left: auto;
+}
+
 .resumen-pedido .metodos {
     display: flex;
     gap: 15px;
     margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.metodos img {
+    height: auto;
+    width: 25px;
+    padding: 5px;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
 }
 
 .resumen-pedido .pagos {
-    flex: 1;
-    background-color: #ff6600;
-    color: white;
-    border: none;
-    padding: 12px 0;
+    flex: 5;
+    background-color: white;
+    color: black;
+    border: 1px solid #ddd;
     border-radius: 8px;
+    max-width: 200px;
+    height: 35px;
+    font-size: 16px;
     font-weight: 700;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .resumen-pedido .pagos:hover {
-    background-color: #e65c00;
+    border: 1px solid black;
 }
 
 .resumen-pedido .pago {
@@ -246,22 +277,24 @@ header nav ul li a {
 }
 
 .resumen-pedido .pagar {
-    background-color: #2c3e2e;
+    background-color: red;
     color: white;
     border: none;
-    padding: 15px 40px;
     border-radius: 12px;
     font-size: 18px;
     font-weight: 700;
+    max-width: 500px;
+    height: 40px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    width: 100%;
 }
 
 .resumen-pedido .pagar:hover {
-    background-color: #ff6600;
+    background-color: #ED1E28;
 }
 
-/* Responsive */
+/* Responsivo */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -283,3 +316,159 @@ header nav ul li a {
         max-width: 100%;
     }
 }
+
+/* ===== NAVBAR ===== */
+.menu-btn {
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+    margin-left: 10px;
+  }
+  
+  .search-container {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 25px;
+    padding: 6px 12px;
+    width: 100%;
+    border: 1px solid #ddd;
+  }
+  
+  
+  /* ===== MENU LATERAL ===== */
+  .menu-lateral {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 280px;
+    height: 100vh;
+    background-color: white;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+    transition: left 0.3s ease;
+    padding: 20px;
+  }
+  
+  .menu-lateral.activo {
+    left: 0;
+  }
+  
+  .cerrar-menu {
+    text-align: right;
+    font-size: 24px;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  
+  .menu-opciones {
+    list-style: none;
+    margin-top: 40px;
+  }
+  
+  .menu-opciones li {
+    margin-bottom: 15px;
+  }
+  
+  .menu-opciones a {
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    transition: color 0.3s;
+  }
+  
+  .menu-opciones a:hover {
+    color: #ff5a6e;
+  }
+  
+  /* ===== MEDIA QUERIES ===== */
+  /* dispositivos pequeños */
+  @media (max-width: 375px) {
+    .menu-btn {
+        font-size: 22px;
+        margin-left: 8px;
+    }
+    
+    .search-container {
+        padding: 5px 10px;
+    }
+  }
+  
+  /* dispositivos medianos */
+  @media (min-width: 768px) {
+    .navbar-drossi {
+        padding: 15px 0;
+    }
+    
+    .search-col {
+        max-width: 350px;
+    }
+    
+    .menu-btn {
+        font-size: 26px;
+    }
+    
+    .search-container {
+        padding: 8px 15px;
+    }
+  }
+  
+  /* dispositivos grandes */
+  @media (min-width: 992px) {
+    .navbar-drossi {
+        padding: 18px 0;
+    }
+    
+    .search-col {
+        max-width: 400px;
+    }
+    
+    .menu-btn {
+        font-size: 28px;
+    }
+  }
+
+  /* Carrito de compras */
+.cart-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+  }
+  
+  .cart-modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 10px;
+    position: relative;
+  }
+  
+  .close-cart-modal {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close-cart-modal:hover,
+  .close-cart-modal:focus {
+    color: black;
+    text-decoration: none;
+  }
