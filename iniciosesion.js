@@ -15,4 +15,5 @@ btnRegistrarse.addEventListener("click", () => {
 registroContainer.querySelector(".iniciar-sesion").addEventListener("click", () => {
   registroContainer.style.display = "none";
   loginContainer.style.display = "block";
+  
 });

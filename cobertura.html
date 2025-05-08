@@ -10,16 +10,60 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
 <body>
-    <header>
-        <div class="boton-volver" style="padding: 15px 30px;">
-            <a href="ventanaprincipal.html"><button type="button" onclick="volverAlInicio()">Volver al inicio</button></a>
-        </div>
-        <div class="title" style="padding: 0 30px 15px 30px;">
-            <h2>Nuestra cobertura</h2>
-            <p>Ingresa tu dirección para encontrar el local más cercano a ti.</p>
-        </div>
-    </header>
+    <nav class="navbar-drossi">
+        <div class="container-fluid p-0">
+            <div class="row g-0 align-items-center d-flex d-md-none">
+                <div class="col-2">
+                    <button class="menu-btn" onclick="toggleMenu()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+                <div class="col-7">
+                    <div class="search-container">
+                        <span class="user-icon">
+                            <i class="far fa-user"></i>
+                        </span>
+                        
+                    </div>
+                </div>
+                <div class="col-3 d-flex justify-content-end">
+                    <div class="cart-and-logo d-flex align-items-center">
+                        <button class="cart-btn" id="botonCarrito">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        
+                        <div class="logo-container">
+                            <img src="imagen/logopasteleria.jpg" alt="Logo D'Rossi" class="logo">
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Vista para tablets y desktop  -->
+            <div class="row g-0 align-items-center d-none d-md-flex">
+                <div class="col-auto">
+                    <button class="menu-btn" onclick="toggleMenu()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+                <div class="col-auto search-col">
+                </div>
+                <div class="col"></div>
+                <div class="col-auto d-flex align-items-center">
+                    <button class="cart-btn">
+                        <a href="conexion.html">
+                            <i class="fas fa-shopping-cart"></i>
+                        </a>
+                    </button>
+                    <div class="logo-container">
+                        <img src="imagen/logopasteleria.jpg" alt="Logo D'Rossi" class="logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    
     <div class="container">
         <div class="left-panel">
             <div class="ingresar-direccion">

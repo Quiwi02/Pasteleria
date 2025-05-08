@@ -129,3 +129,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+document.addEventListener('DOMContentLoaded', function () {
+    var botonCarrito = document.getElementById('botonCarrito');
+    if (botonCarrito) {
+        botonCarrito.addEventListener('click', function () {
+            window.location.href = 'conexion.html';
+        });
+    }
+});
