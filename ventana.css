@@ -106,7 +106,7 @@ body {
 .carousel-item img {
     border-radius: 8px;
     height: auto;
-    object-fit: cover;
+    object-fit: contain;
     width: 100%;
 }
 
