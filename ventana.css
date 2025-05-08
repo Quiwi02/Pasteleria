@@ -8,12 +8,12 @@
 }
 
 body {
-    background-color: #ff5a6e;
+    background-color: #ff6961;
 }
 
 /* ===== NAVBAR ===== */
 .navbar-drossi {
-    background-color: #ff5a6e;
+    background-color: #ff6961;
     padding: 12px 0;
     width: 100%;
 }
@@ -328,27 +328,22 @@ body {
     cursor: pointer;
 }
 
-.carrito-opciones {
-    list-style: none;
-    margin-top: 40px;
+/* Modal del carrito */
+.modal-carrito {
+    position: absolute;
+    top: 90px;
+    right: 10px;
+    width: max-content;
+    background-color: var(--text-white);
+    box-shadow: var(--box-shadow);
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
 }
 
-.carrito-opciones a:hover {
-    color: #ff5a6e;
-}
-
-.carrito-opciones button {
-    color: black;
-    border-radius: 4px;
-    width: 100px;
-    height: 30px;
-    vertical-align: middle;
-}
-
-.carrito img {
-    width: 25px;
-    height: auto;
-
+p {
+    margin: 0;
+    text-wrap: pretty;
 }
 
 /* ===== MEDIA QUERIES ===== */

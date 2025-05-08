@@ -94,46 +94,72 @@ function adjustCarouselHeight() {
 
 // Script para el carrito de compras
 document.addEventListener('DOMContentLoaded', function() {
-    window.toggleCart = function() {
-        var carritocompras = document.getElementById('carritocompras');
-        if (carritocompras) {
-            carritocompras.classList.toggle('activo');
-        }
-    };
-    
-    var botonCerrar = document.querySelector('.cerrar-carrito');
-    if (botonCerrar) {
-        botonCerrar.addEventListener('click', function() {
-            var carritocompras = document.getElementById('carritocompras');
-            if (carritocompras) {
-                carritocompras.classList.remove('activo');
-            }
-        });
+    const carrito = document.getElementById('carritocompras');
+    const cerrarCarrito = document.querySelector('.cerrar-carrito');
+    const modalCarrito = document.getElementById('modal-carrito');
+    const carritoContenido = document.querySelector('.carrito-contenido');
+
+    // Función para abrir el carrito
+    function abrirCarrito() {
+        carrito.classList.add('active');
     }
-    
-    document.addEventListener('click', function(event) {
-        var carritocompras = document.getElementById('carritocompras');
-        var carritoBtn = document.querySelectorAll('.cart-btn');
-        
-        if (carritocompras && carritocompras.classList.contains('activo')) {
-            let clickedOnButton = false;
-            carritoBtn.forEach(function(btn) {
-                if (btn.contains(event.target)) {
-                    clickedOnButton = true;
-                }
-            });
-            
-            if (!carritocompras.contains(event.target) && !clickedOnButton) {
-                carritocompras.classList.remove('activo');
-            }
+
+    // Función para cerrar el carrito
+    function cerrarModalCarrito() {
+        carrito.classList.remove('active');
+    }
+
+    // Evento para cerrar el carrito
+    cerrarCarrito.addEventListener('click', cerrarModalCarrito);
+
+    // Ejemplo de función para agregar productos al carrito
+    function agregarAlCarrito(nombre, precio) {
+        const productoExistente = Array.from(carritoContenido.children).find(elemento =>
+            elemento.querySelector('p') && elemento.querySelector('p').textContent.includes(nombre)
+        );
+
+        if (productoExistente) {
+            const cantidadElemento = productoExistente.querySelector('.cantidad');
+            let cantidad = parseInt(cantidadElemento.textContent);
+            cantidad++;
+            cantidadElemento.textContent = cantidad;
+        } else {
+            const productoDiv = document.createElement('div');
+            productoDiv.classList.add('producto-carrito');
+            productoDiv.innerHTML = `
+                <p>${nombre} - $${precio}</p>
+                <span class="cantidad">1</span>
+                <button class="eliminar-producto">Eliminar</button>
+            `;
+            carritoContenido.appendChild(productoDiv);
+        }
+
+        actualizarMensajeCarrito();
+    }
+
+    // Ejemplo de función para eliminar productos del carrito
+    carritoContenido.addEventListener('click', function(e) {
+        if (e.target.classList.contains('eliminar-producto')) {
+            e.target.parentElement.remove();
+            actualizarMensajeCarrito();
         }
     });
-});
-document.addEventListener('DOMContentLoaded', function () {
-    var botonCarrito = document.getElementById('botonCarrito');
-    if (botonCarrito) {
-        botonCarrito.addEventListener('click', function () {
-            window.location.href = 'conexion.html';
-        });
+
+    // Función para actualizar el mensaje del carrito
+    function actualizarMensajeCarrito() {
+        const productos = document.querySelectorAll('.producto-carrito');
+        const mensajeVacio = document.querySelector('.carrito-contenido p:nth-child(1)');
+        const mensajeExplorar = document.querySelector('.carrito-contenido p:nth-child(2)');
+
+        if (productos.length === 0) {
+            mensajeVacio.style.display = 'block';
+            mensajeExplorar.style.display = 'block';
+        } else {
+            mensajeVacio.style.display = 'none';
+            mensajeExplorar.style.display = 'none';
+        }
     }
+
+    // Ejemplo de cómo podrías agregar un producto al carrito
+    // agregarAlCarrito('Producto 1', 10.99);
 });
