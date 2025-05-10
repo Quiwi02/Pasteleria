@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,42 +12,43 @@
         integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
     <header class="container-fluid py-3">
         <div class="container d-flex justify-content-between align-items-center">
-                <!-- Navbar para móviles -->
-        <nav class="navbar-drossi">
-            <div class="container-fluid p-0">
-                <div class="row g-0 align-items-center d-flex d-md-none">
-                    <div class="col-2">
-                        <button class="menu-btn" onclick="toggleMenu()">
-                            <i class="fas fa-bars"></i>
-                    </button>
-                </div>
-            </div>
+            <!-- Navbar para móviles -->
+            <nav class="navbar-drossi">
+                <div class="container-fluid p-0">
+                    <div class="row g-0 align-items-center d-flex d-md-none">
+                        <div class="col-2">
+                            <button class="menu-btn" onclick="toggleMenu()">
+                                <i class="fas fa-bars"></i>
+                            </button>
+                        </div>
+                    </div>
 
-            <!-- Vista para tablets y desktop  -->
-            <div class="row g-0 align-items-center d-none d-md-flex">
-                <div class="col-auto">
-                    <button class="menu-btn" onclick="toggleMenu()">
-                        <i class="fas fa-bars"></i>
-                    </button>
+                    <!-- Vista para tablets y desktop  -->
+                    <div class="row g-0 align-items-center d-none d-md-flex">
+                        <div class="col-auto">
+                            <button class="menu-btn" onclick="toggleMenu()">
+                                <i class="fas fa-bars"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
+            </nav>
+            <!-- Menú lateral -->
+            <div class="menu-lateral" id="menuLateral">
+                <div class="cerrar-menu" onclick="toggleMenu()">
+                    <i class="fas fa-times"></i>
+                </div>
+                <ul class="menu-opciones">
+                    <li><a href="ventanaprincipal.html">Inicio</a></li>
+                    <li><a href="cobertura.html">Cobertura</a></li>
+                    <li><a href="detallepedido.html">Detalle de pedido</a></li>
+                    <li><a href="iniciosesion.html">Inicio de Sesión</a></li>
+                </ul>
             </div>
-        </div>
-    </nav>
-     <!-- Menú lateral -->
-    <div class="menu-lateral" id="menuLateral">
-        <div class="cerrar-menu" onclick="toggleMenu()">
-            <i class="fas fa-times"></i>
-        </div>
-        <ul class="menu-opciones">
-            <li><a href="ventanaprincipal.html">Inicio</a></li>
-            <li><a href="cobertura.html">Cobertura</a></li>
-            <li><a href="detallepedido.html">Detalle de pedido</a></li>
-            <li><a href="iniciosesion.html">Inicio de Sesión</a></li>
-        </ul>
-    </div>
             <div class="logo">
                 <a href="ventanaprincipal.html">
                     <img src="imagen/logopasteleria.jpg" alt="Logo D'Rossi" height="60">
@@ -68,7 +70,8 @@
             <div class="cart">
                 <a href="#" class="position-relative" onclick="abrirCarrito()">
                     <i class="fas fa-shopping-cart fa-lg"></i>
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cart-count">
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                        id="cart-count">
                         0
                         <span class="visually-hidden">productos en carrito</span>
                     </span>
@@ -100,7 +103,8 @@
                         <img src="imagen/torta2.jpg" class="card-img-top" alt="Torta de Guanábana">
                         <div class="card-body">
                             <h3 class="card-title h5">Torta de Guanábana</h3>
-                            <p class="card-text">Hecha a base de biscochuelo de vainilla con chantilly y deliciosa pulpa de guanábana.</p>
+                            <p class="card-text">Hecha a base de biscochuelo de vainilla con chantilly y deliciosa pulpa
+                                de guanábana.</p>
                             <p class="price fw-bold">S/ 40.00</p>
                             <button class="btn btn-primary add-to-cart" data-id="1">Añadir al carrito</button>
                         </div>
@@ -143,7 +147,8 @@
                         <img src="imagen/torta6.jpg" class="card-img-top" alt="Torta personalizada de cumpleaños">
                         <div class="card-body">
                             <h3 class="card-title h5">Torta Butter Cream</h3>
-                            <p class="card-text">Deliciosa torta personalizable con crema de mantequilla y decoraciones a elección.</p>
+                            <p class="card-text">Deliciosa torta personalizable con crema de mantequilla y decoraciones
+                                a elección.</p>
                             <p class="price fw-bold">S/ 40.00</p>
                             <button class="btn btn-primary add-to-cart" data-id="4">Añadir al carrito</button>
                         </div>
@@ -154,7 +159,8 @@
                         <img src="imagen/torta7.jpg" class="card-img-top" alt="Torta de Guanábana">
                         <div class="card-body">
                             <h3 class="card-title h5">Torta Tres Leches con Guanábana</h3>
-                            <p class="card-text">Hecha a base de biscochuelo humedecido en jarabe de tres leches con chantillí y pulpa de guanábana.</p>
+                            <p class="card-text">Hecha a base de biscochuelo humedecido en jarabe de tres leches con
+                                chantillí y pulpa de guanábana.</p>
                             <p class="price fw-bold">S/ 40.00</p>
                             <button class="btn btn-primary add-to-cart" data-id="5">Añadir al carrito</button>
                         </div>
@@ -165,7 +171,8 @@
                         <img src="imagen/torta8.jpg" class="card-img-top" alt="Torta crocante de vainilla">
                         <div class="card-body">
                             <h3 class="card-title h5">Torta Personalizada Temática</h3>
-                            <p class="card-text">Torta especial para eventos con diseños personalizados según tu ocasión.</p>
+                            <p class="card-text">Torta especial para eventos con diseños personalizados según tu
+                                ocasión.</p>
                             <p class="price fw-bold">S/ 30.00</p>
                             <button class="btn btn-primary add-to-cart" data-id="6">Añadir al carrito</button>
                         </div>
@@ -186,7 +193,8 @@
                         <img src="imagen/bocadito1.jpg" class="card-img-top" alt="Alfajores">
                         <div class="card-body">
                             <h3 class="card-title h5">Alfajores</h3>
-                            <p class="card-text">Deliciosos alfajores rellenos de manjar blanco espolvoreados con azúcar glass.</p>
+                            <p class="card-text">Deliciosos alfajores rellenos de manjar blanco espolvoreados con azúcar
+                                glass.</p>
                             <p class="price fw-bold">S/ 15.00 (docena)</p>
                             <button class="btn btn-primary add-to-cart" data-id="7">Añadir al carrito</button>
                         </div>
@@ -218,18 +226,20 @@
         </section>
     </main>
 
-    <!-- Carrito de compras -->
-    <div class="cart-modal" id="cart-modal">
-        <div class="carrito" id="carritocompras">
-            <div class="cerrar-carrito" onclick="toggleCart()">
-                <i class="fas fa-times"></i>
-            </div>
-            <ul class="carrito-opciones">
-                <button type="button"><img src="imagen/recojo.png" alt="img-recojo">Recojo</button>
-                <button type="button"><img src="imagen/delivery.png" alt="img-delivery">Delivery</button>
-            </ul>
+    <!-- MODAL DE CARRITO -->
+    <div class="carrito" id="carritocompras">
+        <button class="close-cart-modal" onclick="cerrarCarrito()">Cerrar</button>
+        <h2>Carrito de compras</h2>
+        <div id="cart-items"></div>
+
+        <!-- Resumen -->
+        <div class="resumen-carrito mt-3">
+            <p>Subtotal: S/ <span id="subtotal">0.00</span></p>
+            <p>Extras: S/ <span id="extras">0.00</span></p>
+            <p>Total: S/ <span id="total">0.00</span></p>
         </div>
     </div>
+
 
     <!-- Footer -->
     <footer class="bg-dark text-white py-4">
@@ -271,4 +281,5 @@
         crossorigin="anonymous"></script>
     <script src="pasteleria.js"></script>
 </body>
+
 </html>

@@ -52,13 +52,13 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function abrirCarrito() {
-  const cartModal = document.getElementById('cart-modal');
+  const cartModal = document.getElementById('carritocompras');
   cartModal.style.display = 'block';
   actualizarCarrito();
 }
 
 function cerrarCarrito() {
-  const cartModal = document.getElementById('cart-modal');
+  const cartModal = document.getElementById('carrritocompras');
   cartModal.style.display = 'none';
 }
 
@@ -157,3 +157,101 @@ document.addEventListener('DOMContentLoaded', function() {
       }
   });
 });
+
+
+// Script para el modal del carrito
+let cart = [];
+
+document.addEventListener('DOMContentLoaded', function () {
+    cart = JSON.parse(localStorage.getItem('cart')) || [];
+    actualizarContadorCarrito();
+    actualizarCarrito();
+
+    document.getElementById('search').addEventListener('input', function () {
+        const query = this.value.toLowerCase();
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            const name = card.querySelector('.card-title').innerText.toLowerCase();
+            card.style.display = name.includes(query) ? 'block' : 'none';
+        });
+    });
+});
+
+function mostrarCarrito() {
+    document.getElementById('carritocompras').style.display = 'block';
+    actualizarCarrito();
+}
+
+function cerrarCarrito() {
+    document.getElementById('carritocompras').style.display = 'none';
+}
+
+function agregarAlCarrito(nombre, precio) {
+    const productoExistente = cart.find(item => item.nombre === nombre);
+    if (productoExistente) {
+        productoExistente.cantidad += 1;
+    } else {
+        cart.push({ nombre, precio, cantidad: 1 });
+    }
+
+    guardarCarrito();
+    actualizarContadorCarrito();
+    actualizarCarrito();
+}
+
+function guardarCarrito() {
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+function actualizarContadorCarrito() {
+    const totalItems = cart.reduce((sum, item) => sum + item.cantidad, 0);
+    document.getElementById('cart-count').innerText = totalItems;
+}
+
+function actualizarCarrito() {
+    const cartItems = document.getElementById('cart-items');
+    cartItems.innerHTML = '';
+
+    cart.forEach((item, index) => {
+        const itemElement = document.createElement('div');
+        itemElement.innerHTML = `
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <span>${item.nombre} - S/ ${item.precio.toFixed(2)} x ${item.cantidad}</span>
+                <div>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="restarCantidad(${index})">−</button>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="sumarCantidad(${index})">+</button>
+                </div>
+            </div>
+        `;
+        cartItems.appendChild(itemElement);
+    });
+
+    calcularTotal();
+}
+
+function sumarCantidad(index) {
+    cart[index].cantidad += 1;
+    guardarCarrito();
+    actualizarContadorCarrito();
+    actualizarCarrito();
+}
+
+function restarCantidad(index) {
+    cart[index].cantidad -= 1;
+    if (cart[index].cantidad <= 0) {
+        cart.splice(index, 1);
+    }
+    guardarCarrito();
+    actualizarContadorCarrito();
+    actualizarCarrito();
+}
+
+function calcularTotal() {
+    const subtotal = cart.reduce((sum, item) => sum + item.precio * item.cantidad, 0);
+    const extras = subtotal * 0.1; // Por ejemplo, 10% extra
+    const total = subtotal + extras;
+
+    document.getElementById('subtotal').innerText = subtotal.toFixed(2);
+    document.getElementById('extras').innerText = extras.toFixed(2);
+    document.getElementById('total').innerText = total.toFixed(2);
+}

@@ -14,7 +14,7 @@ body {
 
 header {
   background-color: var(--primary-color);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 15px 0;
 }
 
@@ -192,7 +192,7 @@ header {
   background-color: white;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   height: 100%;
   display: flex;
@@ -201,7 +201,7 @@ header {
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .card-img-top {
@@ -310,7 +310,7 @@ footer p {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: rgba(255,255,255,0.1);
+  background-color: rgba(255, 255, 255, 0.1);
   margin-right: 10px;
   color: white;
   transition: background-color 0.3s ease;
@@ -324,56 +324,63 @@ footer p {
   text-align: center;
   padding-top: 30px;
   margin-top: 30px;
-  border-top: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Responsive */
 @media (max-width: 991.98px) {
   .col {
-      flex: 0 0 calc(50% - 30px);
-      max-width: calc(50% - 30px);
+    flex: 0 0 calc(50% - 30px);
+    max-width: calc(50% - 30px);
   }
 
   .footer-section {
-      flex: 0 0 calc(50% - 30px);
+    flex: 0 0 calc(50% - 30px);
   }
 }
 
 @media (max-width: 767.98px) {
   .navbar {
-      flex-direction: column;
+    flex-direction: column;
   }
 
   .navbar-nav {
-      margin: 15px 0;
+    margin: 15px 0;
   }
 
   .col {
-      flex: 0 0 100%;
-      max-width: 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 
   .card-img-top {
-      height: 180px;
+    height: 180px;
   }
 
   .footer-section {
-      flex: 0 0 100%;
+    flex: 0 0 100%;
   }
 
   footer {
-      text-align: center;
+    text-align: center;
   }
 
   .social-links {
-      justify-content: center;
+    justify-content: center;
   }
 }
 
 /* Animaciones */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .card {
@@ -390,8 +397,8 @@ footer p {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
   padding-top: 60px;
 }
 
@@ -453,7 +460,7 @@ footer p {
   width: 280px;
   height: 100vh;
   background-color: white;
-  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   transition: left 0.3s ease;
   padding: 20px;
@@ -497,45 +504,45 @@ footer p {
 /* dispositivos pequeños */
 @media (max-width: 375px) {
   .menu-btn {
-      font-size: 22px;
-      margin-left: 8px;
+    font-size: 22px;
+    margin-left: 8px;
   }
-  
+
   .search-container {
-      padding: 5px 10px;
+    padding: 5px 10px;
   }
 }
 
 /* dispositivos medianos */
 @media (min-width: 768px) {
   .navbar-drossi {
-      padding: 15px 0;
+    padding: 15px 0;
   }
-  
+
   .search-col {
-      max-width: 350px;
+    max-width: 350px;
   }
-  
+
   .menu-btn {
-      font-size: 26px;
+    font-size: 26px;
   }
-  
+
   .search-container {
-      padding: 8px 15px;
+    padding: 8px 15px;
   }
 }
 
 /* dispositivos grandes */
 @media (min-width: 992px) {
   .navbar-drossi {
-      padding: 18px 0;
+    padding: 18px 0;
   }
-  
+
   .search-col {
-      max-width: 400px;
+    max-width: 400px;
   }
-  
+
   .menu-btn {
-      font-size: 28px;
+    font-size: 28px;
   }
 }

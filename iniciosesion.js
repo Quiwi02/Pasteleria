@@ -1,19 +1,21 @@
-const containers = document.querySelectorAll(".container");
-const btnRegistrarse = document.querySelector(".Registrarse"); // Botón de registro en login
-const btnIniciarSesion = document.querySelector(".inisiosesion"); // Botón de inicio
+document.addEventListener("DOMContentLoaded", () => {
+  const containers = document.querySelectorAll(".container");
 
-const loginContainer = containers[0];    // Primer contenedor (login)
-const registroContainer = containers[1]; // Segundo contenedor (registro)
+  const loginContainer = containers[0];    // Login
+  const registroContainer = containers[1]; // Registro
 
-// Mostrar formulario de registro
-btnRegistrarse.addEventListener("click", () => {
-  loginContainer.style.display = "none";
-  registroContainer.style.display = "block";
-});
+  const btnRegistrarse = document.getElementById("btn-registrarse");
+  const btnVolverInicio = document.getElementById("btn-volver-inicio");
 
-// Mostrar formulario de inicio de sesión
-registroContainer.querySelector(".iniciar-sesion").addEventListener("click", () => {
-  registroContainer.style.display = "none";
-  loginContainer.style.display = "block";
-  
+  // Mostrar formulario de registro
+  btnRegistrarse.addEventListener("click", () => {
+    loginContainer.style.display = "none";
+    registroContainer.style.display = "block";
+  });
+
+  // Volver al formulario de inicio de sesión
+  btnVolverInicio.addEventListener("click", () => {
+    registroContainer.style.display = "none";
+    loginContainer.style.display = "block";
+  });
 });
