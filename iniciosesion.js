@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const loginContainer = containers[0];    // Login
   const registroContainer = containers[1]; // Registro
 
+  
   const btnRegistrarse = document.getElementById("btn-registrarse");
   const btnVolverInicio = document.getElementById("btn-volver-inicio");
 
@@ -18,4 +19,5 @@ document.addEventListener("DOMContentLoaded", () => {
     registroContainer.style.display = "none";
     loginContainer.style.display = "block";
   });
+
 });

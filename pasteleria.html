@@ -228,11 +228,11 @@
 
     <!-- MODAL DE CARRITO -->
     <div class="carrito" id="carritocompras">
-        <button class="close-cart-modal" onclick="cerrarCarrito()">Cerrar</button>
+        <div class="cerrar-carrito" onclick="cerrarCarrito()">
+            <i class="fas fa-times"></i>
+        </div>
         <h2>Carrito de compras</h2>
         <div id="cart-items"></div>
-
-        <!-- Resumen -->
         <div class="resumen-carrito mt-3">
             <p>Subtotal: S/ <span id="subtotal">0.00</span></p>
             <p>Extras: S/ <span id="extras">0.00</span></p>
