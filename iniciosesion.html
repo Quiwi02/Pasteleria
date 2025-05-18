@@ -15,29 +15,30 @@
 
     <div id="auth-wrapper">
         <!-- INICIO DE SESIÓN -->
-        <div class="container" id="inicio-sesion">
-            <div class="logo-container">
+        <div class="container-iniciosesion" id="inicio-sesion">
+            <div class="logo-iniciosesion">
                 <img src="imagen/logopasteleria.jpg" alt="Logo D'Rossi">
             </div>
 
-            <div class="form-container">
+            <div class="form-iniciosesion">
                 <form id="loginForm">
-                    <h2>Inicio de sesión</h2>
-                    <div class="entrada">
-                        <label for="email-login">Email</label>
-                        <input type="email" id="email-login" name="email-login" placeholder="Email" required>
+                    <h2 class="h2-iniciosesion">Inicio de sesión</h2>
+
+                    <div class="entrada-iniciosesion">
+                        <label class="label-iniciosesion" for="email-login">Email</label>
+                        <input class="input-iniciosesion" type="email" id="email-login" name="email-login" placeholder="Email" required>
                     </div>
 
-                    <div class="entrada">
-                        <label for="password-login">Contraseña</label>
-                        <input type="password" id="password-login" name="password-login" placeholder="Contraseña" required>
+                    <div class="entrada-iniciosesion">
+                        <label class="label-iniciosesion" for="password-login">Contraseña</label>
+                        <input class="input-iniciosesion" type="password" id="password-login" name="password-login" placeholder="Contraseña" required>
                     </div>
 
                     <div class="olvidar">
                         <a href="#">¿Olvidaste tu contraseña?</a>
                     </div>
 
-                    <div class="imagenes">
+                    <div class="imagenes-iniciosesion">
                         <a href="http://facebook.com/" target="_blank" aria-label="Iniciar con Facebook">
                             <i class="fab fa-facebook"></i>
                         </a>
@@ -46,7 +47,7 @@
                         </a>
                     </div>
 
-                    <div class="botoninicio">
+                    <div class="boton-inicio">
                         <button type="submit" id="btn-iniciar" class="iniciosesion">Iniciar sesión</button>
                         <button type="button" id="btn-registrarse" class="registrarse">Registrate</button>
                     </div>
@@ -55,8 +56,8 @@
         </div>
 
         <!-- REGISTRO -->
-        <div class="container" id="registro" style="display: none;">
-            <div class="logo-container">
+        <div class="container-registro" id="registro">
+            <div class="logo-registro">
                 <img src="imagen/logopasteleria.jpg" alt="Logo D'Rossi">
             </div>
 
@@ -64,22 +65,22 @@
                 <form id="registroForm">
                     <h2>Registro</h2>
 
-                    <div class="entrada">
+                    <div class="entrada-registro">
                         <label for="nombre">Nombre de usuario</label>
                         <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
                     </div>
 
-                    <div class="entrada">
+                    <div class="entrada-registro">
                         <label for="textEmail">Email</label>
                         <input type="email" id="textEmail" name="email" placeholder="Email" required>
                     </div>
 
-                    <div class="entrada">
+                    <div class="entrada-registro">
                         <label for="password-registro">Contraseña</label>
                         <input type="password" id="password-registro" name="password" placeholder="Contraseña" required>
                     </div>
 
-                    <div class="imagenes">
+                    <div class="imagenes-registro">
                         <a href="http://facebook.com/" target="_blank" aria-label="Registrarse con Facebook">
                             <i class="fab fa-facebook"></i>
                         </a>
@@ -88,7 +89,7 @@
                         </a>
                     </div>
 
-                    <div class="botoninicio">
+                    <div class="boton-registro">
                         <button type="submit" class="registrate">Registrate</button>
                         <button type="button" id="btn-volver-inicio" class="btn-cambio">Volver al inicio</button>
                     </div>
@@ -97,5 +98,6 @@
         </div>
     </div>
 
-    <script src="register.js"></script></body>
+    <script src="register.js"></script>
+</body>
 </html>

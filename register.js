@@ -1,9 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const containers = document.querySelectorAll(".container");
-
-  const loginContainer = containers[0];    // Login
-  const registroContainer = containers[1]; // Registro
-
+  const loginContainer = document.querySelector(".container-iniciosesion");
+  const registroContainer = document.querySelector(".container-registro");
   
   const btnRegistrarse = document.getElementById("btn-registrarse");
   const btnVolverInicio = document.getElementById("btn-volver-inicio");
@@ -11,20 +8,20 @@ document.addEventListener("DOMContentLoaded", () => {
   // Mostrar formulario de registro
   btnRegistrarse.addEventListener("click", () => {
     loginContainer.style.display = "none";
-    registroContainer.style.display = "block";
+    registroContainer.style.display = "flex";
   });
 
   // Volver al formulario de inicio de sesión
   btnVolverInicio.addEventListener("click", () => {
     registroContainer.style.display = "none";
-    loginContainer.style.display = "block";
+    loginContainer.style.display = "flex";
   });
 
 });
 
 document.addEventListener("DOMContentLoaded", function () {
     // Obtener las referencias del DOM
-    const container = document.querySelector(".container");
+    const container = document.querySelector(".container-registro");
     const registerBtn = document.querySelector(".registrarse");
 
     const registroForm = document.querySelector("#registroForm");
@@ -72,12 +69,11 @@ document.addEventListener("DOMContentLoaded", function () {
     })
 })
 
+
 // login 
-
-
 document.addEventListener("DOMContentLoaded", function () {
     // Obtener las referencias del DOM
-    const container = document.querySelector(".container");
+    const container = document.querySelector(".container-iniciosesion");
     const loginBtn = document.querySelector(".iniciosesion");
 
     const loginForm = document.querySelector("#loginForm");
