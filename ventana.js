@@ -93,7 +93,6 @@ function adjustCarouselHeight() {
 }
 
 // Script para el carrito de compras
-// Variables globales
 let productosEnCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
 // Función para mostrar u ocultar el carrito

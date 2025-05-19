@@ -17,64 +17,50 @@
 </head>
 
 <body>
-    <!-- Navbar para móviles -->
+    <!-- NUEVA NAVBAR UNIFICADA -->
     <nav class="navbar-drossi">
-        <div class="container-fluid p-0">
-            <div class="row g-0 align-items-center d-flex d-md-none">
-                <div class="col-2">
-                    <button class="menu-btn" onclick="toggleMenu()">
-                        <i class="fas fa-bars"></i>
+        <div class="container-navbar">
+            <nav class="navbar container d-flex justify-content-between align-items-center py-2">
+                <!-- Botón Menú -->
+                <button class="menu-btn" onclick="toggleMenu()">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <!-- Menú de navegación -->
+                <ul class="menu list-unstyled d-none d-md-flex mb-0">
+                    <li class="me-3"><a href="pasteleria.html">Pastelería</a></li>
+                    <li class="me-3"><a href="cobertura.html">Cobertura</a></li>
+                    <li><a href="iniciosesion.html">Inicio de sesión</a></li>
+                </ul>
+
+                <!-- Formulario de búsqueda -->
+                <form class="search-form d-flex align-items-center">
+                    <input type="search" placeholder="Buscar..." class="form-control me-2">
+                    <button class="btn-search btn btn-outline-light" type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
-                </div>
-                <div class="col-7">
-                    <div class="search-container">
-                        <span class="user-icon">
-                            <i class="far fa-user"></i>
-                        </span>
-                        <input type="text" class="search-input" placeholder="Buscar">
-                    </div>
-                </div>
-                <div class="col-3 d-flex justify-content-end">
-                    <div class="cart-and-logo d-flex align-items-center">
-                        <button class="cart-btn" id="botonCarrito" onclick="toggleCarrito()">
-                            <i class="fas fa-shopping-cart"></i>
-                        </button>
+                </form>
 
-
-                        <div class="logo-container">
-                            <img src="imagen/logopasteleria.jpg" alt="Logo D'Rossi" class="logo">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Vista para tablets y desktop  -->
-            <div class="row g-0 align-items-center d-none d-md-flex">
-                <div class="col-auto">
-                    <button class="menu-btn" onclick="toggleMenu()">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
-                <div class="col-auto search-col">
-                    <div class="search-container">
-                        <span class="user-icon">
-                            <i class="far fa-user"></i>
-                        </span>
-                        <input type="text" class="search-input" placeholder="Buscar">
-                    </div>
-                </div>
-                <div class="col"></div>
-                <div class="col-auto d-flex align-items-center">
-                    <button class="cart-btn" onclick="toggleCarrito()">
-                        <i class="fas fa-shopping-cart"></i>
+                <!-- Carrito + Logo -->
+                <div class="d-flex align-items-center ms-3">
+                    <button class="cart-btn btn btn-outline-light me-2" onclick="toggleCarrito()">
+                        <i class="fa-solid fa-shopping-cart"></i>
                     </button>
                     <div class="logo-container">
-                        <img src="imagen/logopasteleria.jpg" alt="Logo D'Rossi" class="logo">
+                        <img src="imagen/logopasteleria.jpg" alt="Logo D'Rossi" class="logo" style="height: 40px;">
                     </div>
                 </div>
-            </div>
+            </nav>
+
+            <!-- Menú hamburguesa solo visible en móviles -->
+            <ul class="menu d-md-none mt-2 px-3">
+                <li><a href="pasteleria.html">Pastelería</a></li>
+                <li><a href="cobertura.html">Cobertura</a></li>
+                <li><a href="iniciosesion.html">Inicio de sesión</a></li>
+            </ul>
         </div>
     </nav>
+
 
     <!-- Sección de Carruseles -->
     <div class="container-fluid p-0 mt-3">
