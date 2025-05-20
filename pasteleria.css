@@ -12,6 +12,7 @@ body {
   font-family: 'Nunito', sans-serif;
   color: var(--dark-color);
   background-color: #f9f9f9;
+  box-sizing: border-box;
 }
 
 .container {
@@ -29,33 +30,47 @@ header {
   padding: 15px 0;
 }
 
-.container {
-  width: 100%;
-  padding: 0 15px;
-}
-
-.navbar {
+.navbar-drossi {
   display: flex;
   align-items: center;
-  padding: 1rem 0;
   justify-content: space-between;
+  width: 100%;
+}
+
+.navbar .fa-bars {
+  display: none;
 }
 
 .menu {
   display: none;
-  flex-wrap: wrap;
-  gap: 10px;
+  gap: 2rem;
+  justify-content: center;
+  flex: 2;
 }
 
 .menu li {
-  display: inline;
-  margin-right: 15px;
+  list-style: none;
 }
 
 .menu a {
+  font-size: 16px;
   color: white;
   text-decoration: none;
   font-weight: bold;
+  position: relative;
+}
+
+.menu a::after {
+  content: '';
+  width: 1.5rem;
+  height: 1px;
+  background-color: #fff;
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  opacity: 0;
+  transition: all .3s ease;
 }
 
 .menu a:hover::after {
@@ -63,7 +78,6 @@ header {
 }
 
 .menu a:hover {
-  text-decoration: underline;
   color: black;
 }
 
@@ -88,21 +102,12 @@ header {
   border: 2px solid #ffcc00;
 }
 
-.menu-btn {
-  background: none;
-  border: none;
-  color: #333;
-  font-size: 24px;
-  cursor: pointer;
-  padding: 5px;
-  margin-left: 10px;
-}
-
-.navbar-drossi {
-  padding: 15px 0;
-}
-
 /* ===== CARRITO ============== */
+.cart {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .cart a {
   color: white;
   text-decoration: none;
@@ -263,8 +268,8 @@ header {
 }
 
 .col {
-  flex: 0 0 calc(33.333% - 30px);
-  max-width: calc(33.333% - 30px);
+  flex: 0 0 50%;
+  max-width: 50%;
   padding: 15px;
   box-sizing: border-box;
 }

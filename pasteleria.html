@@ -17,48 +17,45 @@
     <header class="container-fluid py-3">
         <!-- Navbar para móviles -->
         <nav class="navbar-drossi">
-            <div class="container-fluid p-0">
-                <!-- Botón Menú -->
-                <button class="menu-btn" onclick="toggleMenu()">
-                    <i class="fas fa-bars"></i>
-                </button>
+            <!-- Botón Menú -->
+            <button class="menu-btn" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
 
-                <!-- Menú de navegación -->
-                <ul class="menu list-unstyled d-none d-md-flex mb-0">
-                    <li class="me-3"><a href="ventanaprincipal.html">Inicio</a></li>
-                    <li class="me-3"><a href="cobertura.html">Cobertura</a></li>
-                    <li><a href="iniciosesion.html">Inicio de sesión</a></li>
+            <!-- Menú de navegación -->
+            <ul class="menu list-unstyled d-none d-md-flex mb-0">
+                <li class="me-3"><a href="ventanaprincipal.html">Inicio</a></li>
+                <li class="me-3"><a href="cobertura.html">Cobertura</a></li>
+                <li><a href="iniciosesion.html">Inicio de sesión</a></li>
+            </ul>
+
+            <!-- Menú lateral -->
+            <div class="menu-lateral" id="menuLateral">
+                <div class="cerrar-menu" onclick="toggleMenu()">
+                    <i class="fas fa-times"></i>
+                </div>
+                <ul class="menu-opciones">
+                    <li><a href="ventanaprincipal.html">Inicio</a></li>
+                    <li><a href="cobertura.html">Cobertura</a></li>
+                    <li><a href="iniciosesion.html">Inicio de Sesión</a></li>
                 </ul>
+            </div>
 
-                <!-- Menú lateral -->
-                <div class="menu-lateral" id="menuLateral">
-                    <div class="cerrar-menu" onclick="toggleMenu()">
-                        <i class="fas fa-times"></i>
-                    </div>
-                    <ul class="menu-opciones">
-                        <li><a href="ventanaprincipal.html">Inicio</a></li>
-                        <li><a href="cobertura.html">Cobertura</a></li>
-                        <li><a href="iniciosesion.html">Inicio de Sesión</a></li>
-                    </ul>
-                </div>
-
-                <!-- Carrito de compras + logo -->
-                <div class="cart">
-                    <a href="#" class="position-relative" onclick="abrirCarrito()">
-                        <i class="fas fa-shopping-cart fa-lg"></i>
-                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-                            id="cart-count">
-                            0
-                            <span class="visually-hidden">productos en carrito</span>
-                        </span>
-                    </a>
-
-                    <div class="logo">
-                        <a href="ventanaprincipal.html">
-                            <img src="imagen/logopasteleria.jpg" alt="Logo D'Rossi" height="60">
-                        </a>
-                    </div>
-                </div>
+            <!-- Carrito de compras + logo -->
+            <div class="cart">
+                <a href="#" class="position-relative" onclick="abrirCarrito()">
+                    <i class="fas fa-shopping-cart fa-lg"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                        id="cart-count">
+                        0
+                        <span class="visually-hidden">productos en carrito</span>
+                    </span>
+                </a>
+            </div>
+            <div class="logo">
+                <a href="ventanaprincipal.html">
+                    <img src="imagen/logopasteleria.jpg" alt="Logo D'Rossi" height="60">
+                </a>
             </div>
         </nav>
     </header>
