@@ -1,3 +1,4 @@
+/* ===== VARIABLES GENERALES === */
 :root {
   --primary-color: #f8bbd0;
   --secondary-color: #ff847c;
@@ -6,16 +7,11 @@
   --light-color: #f8f9fa;
 }
 
+/* ===== ESTILOS GENERALES ===== */
 body {
   font-family: 'Nunito', sans-serif;
   color: var(--dark-color);
   background-color: #f9f9f9;
-}
-
-header {
-  background-color: var(--primary-color);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 15px 0;
 }
 
 .container {
@@ -25,13 +21,74 @@ header {
   padding: 0 15px;
 }
 
-.navbar {
+/* ===== NAVBAR =============== */
+header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background-color: var(--primary-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 15px 0;
 }
 
-.pasteleria {
+.container {
+  width: 100%;
+  padding: 0 15px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+  justify-content: space-between;
+}
+
+.menu {
+  display: none;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.menu li {
+  display: inline;
+  margin-right: 15px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.menu a:hover::after {
+  opacity: 1;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+  color: black;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  padding: 5px;
+  font-size: 24px;
+  margin-left: 10px;
+}
+
+.logo {
+  margin-right: 10px;
+}
+
+.logo img {
+  max-height: 60px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid #ffcc00;
+}
+
+.menu-btn {
   background: none;
   border: none;
   color: #333;
@@ -41,34 +98,11 @@ header {
   margin-left: 10px;
 }
 
-.logo img {
-  max-height: 60px;
-  border-radius: 100PX;
+.navbar-drossi {
+  padding: 15px 0;
 }
 
-.navbar-nav {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-item {
-  margin: 0 10px;
-}
-
-.nav-link {
-  color: white !important;
-  font-weight: 600;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  transition: color 0.3s ease;
-}
-
-.nav-link:hover {
-  color: var(--accent-color) !important;
-}
-
+/* ===== CARRITO ============== */
 .cart a {
   color: white;
   text-decoration: none;
@@ -77,6 +111,11 @@ header {
 
 .cart i {
   font-size: 24px;
+}
+
+.cart-btn {
+  font-size: 28px;
+  margin-left: 8px;
 }
 
 .badge {
@@ -95,7 +134,39 @@ header {
   font-weight: bold;
 }
 
-/* Buscador */
+.carrito {
+  position: fixed;
+  top: 0;
+  right: -280px;
+  width: 280px;
+  height: 100vh;
+  background-color: #F76369;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: right 0.3s ease;
+  padding: 20px;
+  overflow: auto;
+}
+
+.carrito.visible,
+.carrito.activo {
+  right: 0;
+}
+
+.cerrar-carrito {
+  text-align: right;
+  font-size: 24px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.carrito p {
+  font-size: 1.1rem;
+  color: #222;
+  margin-bottom: 1rem;
+}
+
+/* ===== BUSCADOR ============= */
 .buscar-torta {
   text-align: center;
   margin: 30px auto;
@@ -143,7 +214,17 @@ header {
   background-color: var(--secondary-color);
 }
 
-/* Títulos de sección */
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 25px;
+  padding: 6px 12px;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+/* ===== TÍTULOS ============== */
 .titulo {
   text-align: center;
   margin-bottom: 40px;
@@ -168,7 +249,7 @@ header {
   background-color: var(--accent-color);
 }
 
-/* Productos */
+/* ===== PRODUCTOS ============ */
 .pasteleria {
   padding: 20px;
   max-width: 1200px;
@@ -197,6 +278,7 @@ header {
   height: 100%;
   display: flex;
   flex-direction: column;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
 .card:hover {
@@ -247,13 +329,12 @@ header {
   font-weight: 600;
   text-align: center;
   vertical-align: middle;
-  user-select: none;
   padding: 0.5rem 1.5rem;
   font-size: 1rem;
   line-height: 1.5;
   border-radius: 30px;
-  transition: all 0.15s ease-in-out;
   cursor: pointer;
+  transition: all 0.15s ease-in-out;
 }
 
 .btn-primary {
@@ -266,11 +347,12 @@ header {
   background-color: var(--secondary-color);
 }
 
-/* Footer */
+/* ===== FOOTER =============== */
 footer {
   background-color: var(--dark-color);
   color: white;
   padding: 50px 0 20px;
+  text-align: center;
 }
 
 .footer-container {
@@ -301,6 +383,7 @@ footer p {
 
 .social-links {
   display: flex;
+  justify-content: center;
 }
 
 .social-links a {
@@ -321,165 +404,12 @@ footer p {
 }
 
 .footer-bottom {
-  text-align: center;
   padding-top: 30px;
   margin-top: 30px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Responsive */
-@media (max-width: 991.98px) {
-  .col {
-    flex: 0 0 calc(50% - 30px);
-    max-width: calc(50% - 30px);
-  }
-
-  .footer-section {
-    flex: 0 0 calc(50% - 30px);
-  }
-}
-
-@media (max-width: 767.98px) {
-  .navbar {
-    flex-direction: column;
-  }
-
-  .navbar-nav {
-    margin: 15px 0;
-  }
-
-  .col {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
-
-  .card-img-top {
-    height: 180px;
-  }
-
-  .footer-section {
-    flex: 0 0 100%;
-  }
-
-  footer {
-    text-align: center;
-  }
-
-  .social-links {
-    justify-content: center;
-  }
-}
-
-/* Animaciones */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.card {
-  animation: fadeIn 0.5s ease-in-out;
-}
-
-/* ===== NAVBAR CARRITO ===== */
-.carrito {
-  position: fixed;
-  top: 0;
-  right: -280px;
-  width: 280px;
-  height: 100vh;
-  background-color: #F76369;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  transition: left 0.3s ease;
-  padding: 20px;
-  overflow: auto;
-}
-
-.cerrar-carrito {
-  text-align: right;
-  font-size: 24px;
-  margin-bottom: 20px;
-  cursor: pointer;
-}
-
-.carrito.visible,
-.carrito.activo {
-  right: 0;
-}
-
-.carrito p {
-  font-size: 1.1rem;
-  color: #222;
-  margin-bottom: 1rem;
-}
-
-
-
-/* ===== MEDIA QUERIES ===== */
-/* dispositivos pequeños */
-@media (max-width: 375px) {
-  .cart-btn {
-    font-size: 22px;
-    margin-left: 8px;
-  }
-}
-
-/* dispositivos medianos */
-@media (min-width: 768px) {
-  .navbar-drossi {
-    padding: 15px 0;
-  }
-
-  .cart-btn {
-    font-size: 26px;
-  }
-}
-
-/* dispositivos grandes */
-@media (min-width: 992px) {
-  .navbar-drossi {
-    padding: 18px 0;
-  }
-
-  .cart-btn {
-    font-size: 28px;
-  }
-}
-
-
-
-
-
-/* ===== NAVBAR ===== */
-.menu-btn {
-  background: none;
-  border: none;
-  color: #333;
-  font-size: 24px;
-  cursor: pointer;
-  padding: 5px;
-  margin-left: 10px;
-}
-
-.search-container {
-  display: flex;
-  align-items: center;
-  background-color: white;
-  border-radius: 25px;
-  padding: 6px 12px;
-  width: 100%;
-  border: 1px solid #ddd;
-}
-
-
-/* ===== MENU LATERAL ===== */
+/* ===== MENU LATERAL ========= */
 .menu-lateral {
   position: fixed;
   top: 0;
@@ -527,12 +457,36 @@ footer p {
   color: #ff5a6e;
 }
 
-/* ===== MEDIA QUERIES ===== */
-/* dispositivos pequeños */
+/* ===== ANIMACIONES ========== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVE =========== */
+/* Móviles pequeños */
 @media (max-width: 375px) {
-  .menu-btn {
+
+  .col,
+  .footer-section {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .card-img-top {
+    height: 180px;
+  }
+
+  .menu-btn,
+  .cart-btn {
     font-size: 22px;
-    margin-left: 8px;
   }
 
   .search-container {
@@ -540,18 +494,37 @@ footer p {
   }
 }
 
-/* dispositivos medianos */
+/* Tablets */
+@media (max-width: 991.98px) {
+
+  .col,
+  .footer-section {
+    flex: 0 0 calc(50% - 30px);
+    max-width: calc(50% - 30px);
+  }
+
+  .navbar {
+    flex-direction: column;
+  }
+
+  .navbar-nav {
+    margin: 15px 0;
+  }
+}
+
+/* Dispositivos medianos */
 @media (min-width: 768px) {
   .navbar-drossi {
     padding: 15px 0;
   }
 
-  .search-col {
-    max-width: 350px;
-  }
-
+  .cart-btn,
   .menu-btn {
     font-size: 26px;
+  }
+
+  .search-col {
+    max-width: 350px;
   }
 
   .search-container {
@@ -559,7 +532,7 @@ footer p {
   }
 }
 
-/* dispositivos grandes */
+/* Dispositivos grandes */
 @media (min-width: 992px) {
   .navbar-drossi {
     padding: 18px 0;
@@ -569,6 +542,7 @@ footer p {
     max-width: 400px;
   }
 
+  .cart-btn,
   .menu-btn {
     font-size: 28px;
   }
