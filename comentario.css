@@ -1,118 +1,160 @@
-/* General body styles */
+/* ============================
+   RESET & ESTILOS GENERALES
+============================ */
 body {
     font-family: 'Segoe UI', sans-serif;
     background-color: #ffffff;
     margin: 0;
     padding: 0;
-    color: #FA4C58;
 }
 
-/* Header styles */
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #FA4C58;
-    padding: 15px 30px;
+/* ===== NAVBAR ===== */
+.navbar-drossi {
+  background-color: #f8bbd0;
+  width: 100%;
+}
+
+.container-navbar {
+  width: 100%;
+  padding: 18px 15px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  justify-content: space-between;
+}
+
+.navbar h2 {
     color: white;
 }
 
-header .logo img {
-    height: 50px;
-    width: auto;
-    border-radius: 100px;
+.menu {
+  display: none;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-/* Menu toggle (hamburguesa) */
-.menu-toggle {
-    display: none;
-    font-size: 28px;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
+.menu li {
+  display: inline;
+  margin-right: 15px;
 }
 
-header nav {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-    gap: 20px;
-    list-style: none;
-    padding: 0;
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-header nav li {
-    display: flex;
-    align-items: center;
+.menu a:hover::after {
+  opacity: 1;
 }
 
-header nav li a {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 5px;
+.menu a:hover {
+  text-decoration: underline;
+  color: black;
 }
 
-header nav li a:hover {
-    color: white;
+.menu-btn,
+.cart-btn {
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  padding: 5px;
 }
 
-/* Mobile view adjustments */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-    header nav {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: #FA4C58;
-        padding: 10px 0;
-    }
-
-    header nav.show {
-        display: flex;
-    }
-
-    header nav li {
-        justify-content: center;
-        padding: 10px 0;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .contenido, .procesos {
-        padding: 15px 20px;
-    }
-
-    .resumen-box {
-        margin-bottom: 20px;
-    }
-
-    .proceso-box {
-        margin-bottom: 20px;
-    }
-
-    /* Ajustar el tamaño de los botones */
-    .procesos .botones {
-        width: 100%;
-    }
+.menu-btn {
+  font-size: 24px;
+  margin-left: 10px;
 }
 
-/* Content area styles */
+.cart-btn {
+  position: relative;
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.user-icon {
+  color: #999;
+  margin-right: 5px;
+  font-size: 16px;
+}
+
+.logo-container {
+  margin-right: 10px;
+}
+
+.logo {
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid #ffcc00;
+}
+
+.cart-and-logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* ===== MENÚ LATERAL ===== */
+.menu-lateral {
+  position: fixed;
+  top: 0;
+  left: -280px;
+  width: 280px;
+  height: 100vh;
+  background-color: white;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: left 0.3s ease;
+  padding: 20px;
+}
+
+.menu-lateral.activo {
+  left: 0;
+}
+
+.cerrar-menu {
+  text-align: right;
+  font-size: 24px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.menu-opciones {
+  list-style: none;
+  margin-top: 40px;
+}
+
+.menu-opciones li {
+  margin-bottom: 15px;
+}
+
+.menu-opciones a {
+  color: #333;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  transition: color 0.3s;
+}
+
+.menu-opciones a:hover {
+  color: #ff5a6e;
+}
+
+
+/* ============================
+   ÁREA DE CONTENIDO PRINCIPAL
+============================ */
 .contenido {
     padding: 20px 30px;
 }
 
-.contenido .volver {
+.volver {
     background-color: transparent;
     color: black;
     border: none;
@@ -126,16 +168,18 @@ header nav li a:hover {
     transition: background-color 0.3s ease;
 }
 
-.contenido .volver img {
+.contenido a {
+    text-decoration: none;
+}
+
+.volver img {
     height: 20px;
     width: auto;
 }
 
-.contenido .volver:hover {
-    background-color: #999;
-}
-
-/* Procesos */
+/* ============================
+   SECCIÓN PROCESOS
+============================ */
 .procesos {
     padding: 20px 30px;
     display: flex;
@@ -168,7 +212,7 @@ header nav li a:hover {
 }
 
 .procesos .botones {
-    background-color: #ED1E28;
+    background-color: gray;
     color: white;
     border: none;
     padding: 12px 20px;
@@ -182,149 +226,200 @@ header nav li a:hover {
 }
 
 .procesos .botones:hover {
-    background-color: red;
+    background-color: rgb(172, 171, 171);
 }
 
-/* Resumen y pago */
-.resumen-box, .proceso-box {
+textarea {
+  resize: vertical;
+}
+
+/* ============================
+   RESUMEN Y PAGOS
+============================ */
+.resumen-box,
+.proceso-box {
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
     margin-bottom: 20px;
 }
 
-/* Responsive adjustments for large screen */
+/* ============================
+   FOOTER
+============================ */
+footer {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 50px 0 20px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.footer-section {
+    flex: 0 0 calc(33.333% - 30px);
+    margin-bottom: 30px;
+}
+
+footer h4 {
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    font-size: 20px;
+}
+
+footer p {
+    margin-bottom: 0.8rem;
+    opacity: 0.8;
+}
+
+.social-links {
+    display: flex;
+}
+
+.social-links a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-right: 10px;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: var(--primary-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    margin-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ============================
+   MEDIA QUERIES
+============================ */
+/* Tablets y pantallas medianas */
 @media (max-width: 1200px) {
-    .resumen-box, .proceso-box {
+
+    .resumen-box,
+    .proceso-box {
         margin-bottom: 20px;
     }
 }
 
-/* For very small screens */
+@media (max-width: 992px) {
+    .col {
+        flex: 0 0 calc(50% - 30px);
+        max-width: calc(50% - 30px);
+    }
+
+    .footer-section {
+        flex: 0 0 calc(50% - 30px);
+    }
+}
+
+/* Móviles */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    header nav {
+        display: none;
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    header nav.show {
+        display: flex;
+    }
+
+    header nav li {
+        justify-content: center;
+        padding: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .contenido,
+    .procesos {
+        padding: 15px 20px;
+    }
+
+    .resumen-box,
+    .proceso-box {
+        margin-bottom: 20px;
+    }
+
+    .procesos .botones {
+        width: 100%;
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+    .col {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .card-img-top {
+        height: 180px;
+    }
+
+    .footer-section {
+        flex: 0 0 100%;
+    }
+
+    footer {
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
+/* Móviles muy pequeños */
 @media (max-width: 480px) {
-    .resumen-box, .proceso-box {
+
+    .resumen-box,
+    .proceso-box {
         padding: 15px;
     }
 }
 
-
-/* Footer */
-footer {
-  background-color: var(--dark-color);
-  color: white;
-  padding: 50px 0 20px;
-}
-
-.footer-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
-}
-
-.footer-section {
-  flex: 0 0 calc(33.333% - 30px);
-  margin-bottom: 30px;
-}
-
-footer h4 {
-  color: var(--accent-color);
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  font-size: 20px;
-}
-
-footer p {
-  margin-bottom: 0.8rem;
-  opacity: 0.8;
-}
-
-.social-links {
-  display: flex;
-}
-
-.social-links a {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.1);
-  margin-right: 10px;
-  color: white;
-  transition: background-color 0.3s ease;
-}
-
-.social-links a:hover {
-  background-color: var(--primary-color);
-}
-
-.footer-bottom {
-  text-align: center;
-  padding-top: 30px;
-  margin-top: 30px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Responsive */
-@media (max-width: 991.98px) {
-  .col {
-    flex: 0 0 calc(50% - 30px);
-    max-width: calc(50% - 30px);
-  }
-
-  .footer-section {
-    flex: 0 0 calc(50% - 30px);
-  }
-}
-
-@media (max-width: 767.98px) {
-  .navbar {
-    flex-direction: column;
-  }
-
-  .navbar-nav {
-    margin: 15px 0;
-  }
-
-  .col {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
-
-  .card-img-top {
-    height: 180px;
-  }
-
-  .footer-section {
-    flex: 0 0 100%;
-  }
-
-  footer {
-    text-align: center;
-  }
-
-  .social-links {
-    justify-content: center;
-  }
-}
-
-/* Animaciones */
+/* ============================
+   ANIMACIONES
+============================ */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .card {
-  animation: fadeIn 0.5s ease-in-out;
+    animation: fadeIn 0.5s ease-in-out;
 }

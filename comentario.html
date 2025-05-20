@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -9,18 +9,47 @@
     <link rel="icon" type="image/jpg" href="imagen/logopasteleria.jpg">
 
     <link rel="stylesheet" href="comentario.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
     <header>
-        <div class="logo">
-            <img src="imagen/logopasteleria.jpg" alt="logo de la pasteleria">
-        </div>
-        <nav>
-            <li><a>Comentarios</a></li>
-            <li><a href="#user"><img src="imagen/usuario.png" alt="usuario"></a></li>
-            <li><a href="#usuario"></a>Usuario</li>
-            <li><a href="carrito.html"><img src="imagen/carrito.png" alt="carrito"></a></li>
+        <nav class="navbar-drossi">
+            <div class="container-navbar">
+                <div class="navbar">
+                    <!-- Botón Menú -->
+                    <button class="menu-btn" onclick="toggleMenu()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+
+                    <h2>Comentario</h2>
+
+                    <!-- Menú de navegación -->
+                    <ul class="menu list-unstyled d-none d-md-flex mb-0">
+                        <li class="me-3"><a href="ventanaprincipal.html">Inicio</a></li>
+                        <li class="me-3"><a href="cobertura.html">Cobertura</a></li>
+                        <li><a href="iniciosesion.html">Inicio de sesión</a></li>
+                    </ul>
+
+                    <!-- Carrito + Logo -->
+                    <div class="d-flex align-items-center ms-3">
+                        <button class="cart-btn btn btn-outline-light me-2" onclick="toggleCarrito()">
+                            <i class="fa-solid fa-shopping-cart"></i>
+                        </button>
+                        <div class="logo-container">
+                            <img src="imagen/logopasteleria.jpg" alt="Logo D'Rossi" class="logo" style="height: 40px;">
+                        </div>
+                    </div>
+                </div>
+                <!-- Menú hamburguesa solo visible en móviles -->
+                <ul class="menu d-md-none mt-2 px-3">
+                    <li><a href="pasteleria.html">Pastelería</a></li>
+                    <li><a href="cobertura.html">Cobertura</a></li>
+                    <li><a href="iniciosesion.html">Inicio de sesión</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
 
@@ -33,6 +62,19 @@
         <label for="comentario">Comentario para mejorar su experiencia</label>
         <textarea id="comentario" placeholder="Por favor ingresa tu comentario, nos ayudaría mucho"></textarea>
         <button id="btnEnviar" type="button" class="botones">Enviar</button>
+    </div>
+
+    <!-- Menú lateral -->
+    <div class="menu-lateral" id="menuLateral">
+        <div class="cerrar-menu" onclick="toggleMenu()">
+            <i class="fas fa-times"></i>
+        </div>
+        <ul class="menu-opciones">
+            <li><a href="ventanaprincipal.html">Inicio</a></li>
+            <li><a href="pasteleria.html">Pastelería</a></li>
+            <li><a href="cobertura.html">Cobertura</a></li>
+            <li><a href="iniciosesion.html">Inicio de Sesión</a></li>
+        </ul>
     </div>
 
     <!-- Footer -->
