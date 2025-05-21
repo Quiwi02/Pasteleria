@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
+// Registro
 document.addEventListener("DOMContentLoaded", function () {
     // Obtener las referencias del DOM
     const container = document.querySelector(".container-registro");
@@ -70,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
 })
 
 
-// login 
+// Login 
 document.addEventListener("DOMContentLoaded", function () {
     // Obtener las referencias del DOM
     const container = document.querySelector(".container-iniciosesion");
@@ -105,9 +106,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (response.ok) {
                 alert("Inicio de sesion exitoso");
-                window.location.href = 'pasteleria.html';
+                window.location.href = '/html/pasteleria.html';
             } else {
-                alert("Usuario y contraseña incorrectos");
+                alert("Email y contraseña incorrectos");
                 loginForm.reset();
             }
         }
