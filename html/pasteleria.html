@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Pastelería D'Rossi - Tortas y bocaditos personalizados">
-    <title>Aplicación D'Rossi</title>
+    <title>Tortas D'Rossi</title>
 
     <link rel="icon" type="image/jpg" href="/imagen/logopasteleria.jpg">
 
@@ -217,10 +217,18 @@
         </div>
         <h2>Carrito de compras</h2>
         <div id="cart-items"></div>
-        <div class="resumen-carrito mt-3">
-            <p>Subtotal: S/ <span id="subtotal">0.00</span></p>
-            <p>Extras: S/ <span id="extras">0.00</span></p>
-            <p>Total: S/ <span id="total">0.00</span></p>
+        <div class="resumen-carrito">
+            <p>Subtotal: <span id="subtotal">S/ 0.00</span></p>
+            <p>Extras: <span id="extras">S/ 0.00</span></p>
+            <p class="precio-total">Total: <span id="total">S/ 0.00</span></p>
+        </div>
+        <div class="boton-pagar">
+            <a href="/html/conexion.html">
+                <button type="submit" class="btn-confirmar">Confirmar</button>
+            </a>
+            <a href="">
+                <button type="submit" class="btn-seguir">Seguir comprando</button>
+            </a>
         </div>
     </div>
 
