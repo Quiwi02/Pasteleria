@@ -1,204 +1,175 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Pastelería D'Rossi - Tortas y bocaditos personalizados"
-    />
-    <title>Tortas D'Rossi</title>
 
-    <link rel="icon" type="image/jpg" href="/imagen/logopasteleria.jpg" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pastelería D'Rossi - Tortas y bocaditos personalizados" />
+  <title>Tortas D'Rossi</title>
 
-    <link rel="stylesheet" href="/css/pasteleria.css" />
+  <link rel="icon" type="image/jpg" href="/imagen/logopasteleria.jpg" />
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
-      crossorigin="anonymous"
-    />
+  <link rel="stylesheet" href="/css/pasteleria.css" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-  </head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous" />
 
-  <body>
-    <header class="container-fluid py-3">
-      <!-- Navbar para móviles -->
-      <nav class="navbar-drossi">
-        <!-- Botón Menú -->
-        <button class="menu-btn" onclick="toggleMenu()">
-          <i class="fas fa-bars"></i>
-        </button>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
 
-        <!-- Menú de navegación -->
-        <ul class="menu list-unstyled d-none d-md-flex mb-0">
-          <li class="me-3"><a href="/html/ventanaprincipal.html">Inicio</a></li>
-          <li class="me-3"><a href="/html/cobertura.html">Cobertura</a></li>
-          <li><a href="/html/iniciosesion.html">Inicio de sesión</a></li>
+<body>
+  <header class="container-fluid py-3">
+    <!-- Navbar para móviles -->
+    <nav class="navbar-drossi">
+      <!-- Botón Menú -->
+      <button class="menu-btn" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Menú de navegación -->
+      <ul class="menu list-unstyled d-none d-md-flex mb-0">
+        <li class="me-3"><a href="/html/ventanaprincipal.html">Inicio</a></li>
+        <li class="me-3"><a href="/html/cobertura.html">Cobertura</a></li>
+        <li><a href="/html/iniciosesion.html">Inicio de sesión</a></li>
+      </ul>
+
+      <!-- Menú lateral -->
+      <div class="menu-lateral" id="menuLateral">
+        <div class="cerrar-menu" onclick="toggleMenu()">
+          <i class="fas fa-times"></i>
+        </div>
+        <ul class="menu-opciones">
+          <li><a href="/html/ventanaprincipal.html">Inicio</a></li>
+          <li><a href="/html/cobertura.html">Cobertura</a></li>
+          <li><a href="/html/iniciosesion.html">Inicio de Sesión</a></li>
         </ul>
+      </div>
 
-        <!-- Menú lateral -->
-        <div class="menu-lateral" id="menuLateral">
-          <div class="cerrar-menu" onclick="toggleMenu()">
-            <i class="fas fa-times"></i>
+      <!-- Carrito de compras + logo -->
+      <div class="cart">
+        <a href="#" class="position-relative" onclick="abrirCarrito()">
+          <i class="fas fa-shopping-cart fa-lg"></i>
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cart-count">
+            0
+            <span class="visually-hidden">productos en carrito</span>
+          </span>
+        </a>
+      </div>
+      <div class="logo">
+        <a href="/html/ventanaprincipal.html">
+          <img src="/imagen/logopasteleria.jpg" alt="Logo D'Rossi" height="60" />
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container py-4">
+    <!-- Buscador de productos -->
+    <section class="buscar-torta mb-4">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Buscar tortas o bocaditos" aria-label="Búsqueda" />
+        <button class="btn btn-outline-secondary" type="button">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </section>
+
+    <!-- Tortas -->
+    <section class="pasteleria mb-5">
+      <div class="titulo">
+        <h2 class="mb-4">Tortas</h2>
+        <hr class="mb-4" />
+      </div>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <!-- Aquí se agregan dinámicamente -->
+      </div>
+    </section>
+
+    <!--Tortas personalizadas -->
+    <section class="pasteleria mb-5">
+      <div class="titulo">
+        <h2 class="mb-4">Tortas Personalizadas</h2>
+        <hr class="mb-4" />
+      </div>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+
+      </div>
+    </section>
+
+    <!-- Bocaditos -->
+    <section class="pasteleria mb-5">
+      <div class="titulo">
+        <h2 class="mb-4">Bocaditos</h2>
+        <hr class="mb-4" />
+      </div>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL DE CARRITO -->
+  <div class="carrito" id="carritocompras">
+    <div class="cerrar-carrito" onclick="cerrarCarrito()">
+      <i class="fas fa-times"></i>
+    </div>
+    <h2>Carrito de compras</h2>
+    <div id="cart-items"></div>
+    <div class="resumen-carrito">
+      <p>Subtotal: <span id="subtotal">S/ 0.00</span></p>
+      <p>Extras: <span id="extras">S/ 0.00</span></p>
+      <p class="precio-total">Total: <span id="total">S/ 0.00</span></p>
+    </div>
+    <div class="boton-pagar">
+      <a href="/html/conexion.html">
+        <button type="submit" class="btn-confirmar">Confirmar</button>
+      </a>
+      <a href="">
+        <button type="submit" class="btn-seguir">Seguir comprando</button>
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-black py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <h4>Contacto</h4>
+          <address>
+            <p><i class="fas fa-map-marker-alt"></i> Dirección</p>
+            <p><i class="fas fa-phone"></i> +51 123-456-789</p>
+            <p><i class="fas fa-envelope"></i> info@drossi.com</p>
+          </address>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h4>Horarios</h4>
+          <p>Lunes a Viernes: 9am - 7pm</p>
+          <p>Sábados: 10am - 6pm</p>
+          <p>Domingos: 10am - 2pm</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h4>Síguenos</h4>
+          <div class="social-links">
+            <a href="#" class="text-white me-2"><i class="fab fa-facebook-f fa-lg"></i></a>
+            <a href="#" class="text-white me-2"><i class="fab fa-instagram fa-lg"></i></a>
+            <a href="#" class="text-white me-2"><i class="fab fa-whatsapp fa-lg"></i></a>
           </div>
-          <ul class="menu-opciones">
-            <li><a href="/html/ventanaprincipal.html">Inicio</a></li>
-            <li><a href="/html/cobertura.html">Cobertura</a></li>
-            <li><a href="/html/iniciosesion.html">Inicio de Sesión</a></li>
-          </ul>
         </div>
-
-        <!-- Carrito de compras + logo -->
-        <div class="cart">
-          <a href="#" class="position-relative" onclick="abrirCarrito()">
-            <i class="fas fa-shopping-cart fa-lg"></i>
-            <span
-              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-              id="cart-count"
-            >
-              0
-              <span class="visually-hidden">productos en carrito</span>
-            </span>
-          </a>
-        </div>
-        <div class="logo">
-          <a href="/html/ventanaprincipal.html">
-            <img
-              src="/imagen/logopasteleria.jpg"
-              alt="Logo D'Rossi"
-              height="60"
-            />
-          </a>
-        </div>
-      </nav>
-    </header>
-
-    <main class="container py-4">
-      <!-- Buscador de productos -->
-      <section class="buscar-torta mb-4">
-        <div class="input-group">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Buscar tortas o bocaditos"
-            aria-label="Búsqueda"
-          />
-          <button class="btn btn-outline-secondary" type="button">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-      </section>
-
-      <!-- Tortas -->
-      <section class="pasteleria mb-5">
-        <div class="titulo">
-          <h2 class="mb-4">Tortas</h2>
-          <hr class="mb-4" />
-        </div>
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-          <!-- Aquí se agregan dinámicamente -->
-        </div>
-      </section>
-
-      <!--Tortas personalizadas -->
-      <section class="pasteleria mb-5">
-        <div class="titulo">
-          <h2 class="mb-4">Tortas Personalizadas</h2>
-          <hr class="mb-4" />
-        </div>
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-         
-        </div>
-      </section>
-
-      <!-- Bocaditos -->
-      <section class="pasteleria mb-5">
-        <div class="titulo">
-          <h2 class="mb-4">Bocaditos</h2>
-          <hr class="mb-4" />
-        </div>
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-
-        </div>
-      </section>
-    </main>
-
-    <!-- MODAL DE CARRITO -->
-    <div class="carrito" id="carritocompras">
-      <div class="cerrar-carrito" onclick="cerrarCarrito()">
-        <i class="fas fa-times"></i>
       </div>
-      <h2>Carrito de compras</h2>
-      <div id="cart-items"></div>
-      <div class="resumen-carrito">
-        <p>Subtotal: <span id="subtotal">S/ 0.00</span></p>
-        <p>Extras: <span id="extras">S/ 0.00</span></p>
-        <p class="precio-total">Total: <span id="total">S/ 0.00</span></p>
-      </div>
-      <div class="boton-pagar">
-        <a href="/html/conexion.html">
-          <button type="submit" class="btn-confirmar">Confirmar</button>
-        </a>
-        <a href="">
-          <button type="submit" class="btn-seguir">Seguir comprando</button>
-        </a>
+      <div class="row mt-3">
+        <div class="col-12 text-center">
+          <p>
+            &copy; 2025 Pastelería D'Rossi. Todos los derechos reservados.
+          </p>
+        </div>
       </div>
     </div>
+  </footer>
 
-    <!-- Footer -->
-    <footer class="text-black py-4">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4 mb-3">
-            <h4>Contacto</h4>
-            <address>
-              <p><i class="fas fa-map-marker-alt"></i> Dirección</p>
-              <p><i class="fas fa-phone"></i> +51 123-456-789</p>
-              <p><i class="fas fa-envelope"></i> info@drossi.com</p>
-            </address>
-          </div>
-          <div class="col-md-4 mb-3">
-            <h4>Horarios</h4>
-            <p>Lunes a Viernes: 9am - 7pm</p>
-            <p>Sábados: 10am - 6pm</p>
-            <p>Domingos: 10am - 2pm</p>
-          </div>
-          <div class="col-md-4 mb-3">
-            <h4>Síguenos</h4>
-            <div class="social-links">
-              <a href="#" class="text-white me-2"
-                ><i class="fab fa-facebook-f fa-lg"></i
-              ></a>
-              <a href="#" class="text-white me-2"
-                ><i class="fab fa-instagram fa-lg"></i
-              ></a>
-              <a href="#" class="text-white me-2"
-                ><i class="fab fa-whatsapp fa-lg"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-        <div class="row mt-3">
-          <div class="col-12 text-center">
-            <p>
-              &copy; 2025 Pastelería D'Rossi. Todos los derechos reservados.
-            </p>
-          </div>
-        </div>
-      </div>
-    </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-uDDQjHMzYZi+GdFaZCGDfWh4rbVxJhUMn4lZDyOjG8XrPgYDOAJg2Uv6K5N6yYW" crossorigin="anonymous"></script>
+  <script src="/js/pasteleria.js"></script>
+</body>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-uDDQjHMzYZi+GdFaZCGDfWh4rbVxJhUMn4lZDyOjG8XrPgYDOAJg2Uv6K5N6yYW"
-      crossorigin="anonymous"
-    ></script>
-    <script src="/js/pasteleria.js"></script>
-  </body>
 </html>

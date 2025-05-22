@@ -181,7 +181,7 @@ header {
 }
 
 .resumen-carrito {
-  margin-top: 380px;
+  margin-top: 100%;
 }
 
 .precio-total {
@@ -209,6 +209,13 @@ header {
   color: #f5a9c3;
   font-weight: bold;
   border: 2px solid white;
+}
+
+.btn-hola {
+  background-color: white;
+  color: #ff5a6e;
+  border: none;
+  padding: 15px;
 }
 
 /* ===== BUSCADOR ============= */
@@ -268,6 +275,7 @@ header {
   width: 100%;
   border: 1px solid #ddd;
 }
+
 
 /* ===== TÍTULOS ============== */
 .titulo {
