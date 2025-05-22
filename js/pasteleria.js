@@ -105,29 +105,35 @@ document.addEventListener("DOMContentLoaded", function () {
         contenedor.appendChild(card);
 
         // Enlaza botón al carrito
-        card.querySelector(".add-to-cart").addEventListener("click", function () {
-          const productId = this.getAttribute("data-id");
-          const productName = producto.nombre;
-          const productPrice = parseFloat(producto.precio);
+card.querySelector(".add-to-cart").addEventListener("click", function () {
+  const productId = this.getAttribute("data-id");
+  const productName = producto.nombre;
+  const productPrice = parseFloat(producto.precio);
 
-          let cart = JSON.parse(localStorage.getItem("cart")) || [];
-          const existingProduct = cart.find((p) => p.id === productId);
-          if (existingProduct) {
-            existingProduct.quantity += 1;
-          } else {
-            cart.push({
-              id: productId,
-              name: productName,
-              price: productPrice,
-              quantity: 1,
-            });
-          }
+  if (isNaN(productPrice)) {
+    alert("Precio inválido para este producto. Revisa los datos.");
+    return;
+  }
 
-          localStorage.setItem("cart", JSON.stringify(cart));
-          updateCartCount();
-          abrirCarrito();
-          alert("Producto añadido al carrito");
-        });
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const existingProduct = cart.find((p) => p.id === productId);
+  if (existingProduct) {
+    existingProduct.quantity += 1;
+  } else {
+    cart.push({
+      id: productId,
+      name: productName,
+      price: productPrice,
+      quantity: 1,
+    });
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+  abrirCarrito();
+  alert("Producto añadido al carrito");
+});
+
       } else {
         console.warn(`No se encontró contenedor para la categoría: "${categoriaNormalizada}"`);
         console.log('Categorías disponibles:', Object.keys(secciones));
