@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function fetchProductos() {
     fetch("http://localhost:3000/api/productos")
       .then((response) => {
-        console.log('Status de respuesta:', response.status);
+        console.log("Status de respuesta:", response.status);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
       })
       .then((data) => {
         console.log("Datos recibidos:", data);
-        
+
         if (Array.isArray(data)) {
           renderProductos(data);
         } else {
@@ -35,21 +35,23 @@ document.addEventListener("DOMContentLoaded", function () {
       })
       .catch((error) => {
         console.error("Error al cargar productos:", error);
-        alert("Error al cargar productos. Verifica que el servidor esté funcionando.");
+        alert(
+          "Error al cargar productos. Verifica que el servidor esté funcionando."
+        );
       });
   }
 
   function renderProductos(productos) {
     // Selecciona TODAS las secciones de pastelería
-    const todasLasSecciones = document.querySelectorAll('.pasteleria .row');
-    
+    const todasLasSecciones = document.querySelectorAll(".pasteleria .row");
+
     console.log(`Total de secciones encontradas: ${todasLasSecciones.length}`);
-    
+
     // Mapear secciones basándose en los títulos
     const secciones = {};
-    
+
     todasLasSecciones.forEach((seccion, index) => {
-      const tituloElement = seccion.parentElement.querySelector('.titulo h2');
+      const tituloElement = seccion.parentElement.querySelector(".titulo h2");
       if (tituloElement) {
         const titulo = tituloElement.textContent.toLowerCase().trim();
         console.log(`Sección ${index + 1}: "${titulo}"`);
@@ -60,9 +62,9 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Secciones mapeadas:", Object.keys(secciones));
 
     // LIMPIAR todas las secciones antes de agregar productos
-    Object.values(secciones).forEach(seccion => {
+    Object.values(secciones).forEach((seccion) => {
       if (seccion) {
-        seccion.innerHTML = '';
+        seccion.innerHTML = "";
         console.log("Sección limpiada");
       }
     });
@@ -74,16 +76,16 @@ document.addEventListener("DOMContentLoaded", function () {
         .replace(/[\u0300-\u036f]/g, "")
         .toLowerCase()
         .trim();
-      
+
       console.log(`Producto: ${producto.nombre}`);
       console.log(`Categoría original: "${producto.categoria}"`);
       console.log(`Categoría normalizada: "${categoriaNormalizada}"`);
-      
+
       const contenedor = secciones[categoriaNormalizada];
 
       if (contenedor) {
         console.log(`Agregando ${producto.nombre} a ${categoriaNormalizada}`);
-        
+
         const card = document.createElement("div");
         card.className = "col";
         card.innerHTML = `
@@ -95,8 +97,12 @@ document.addEventListener("DOMContentLoaded", function () {
                     <div class="card-body">
                         <h3 class="card-title h5">${producto.nombre}</h3>
                         <p class="card-text">${producto.descripcion}</p>
-                        <p class="price fw-bold">S/ ${parseFloat(producto.precio).toFixed(2)}</p>
-                        <button class="btn btn-primary add-to-cart" data-id="${producto.id_productos}">
+                        <p class="price fw-bold">S/ ${parseFloat(
+                          producto.precio
+                        ).toFixed(2)}</p>
+                        <button class="btn btn-primary add-to-cart" data-id="${
+                          producto.id_productos
+                        }">
                             Añadir al carrito
                         </button>
                     </div>
@@ -105,38 +111,41 @@ document.addEventListener("DOMContentLoaded", function () {
         contenedor.appendChild(card);
 
         // Enlaza botón al carrito
-card.querySelector(".add-to-cart").addEventListener("click", function () {
-  const productId = this.getAttribute("data-id");
-  const productName = producto.nombre;
-  const productPrice = parseFloat(producto.precio);
+        card
+          .querySelector(".add-to-cart")
+          .addEventListener("click", function () {
+            const productId = this.getAttribute("data-id");
+            const productName = producto.nombre;
+            const productPrice = parseFloat(producto.precio);
 
-  if (isNaN(productPrice)) {
-    alert("Precio inválido para este producto. Revisa los datos.");
-    return;
-  }
+            if (isNaN(productPrice)) {
+              alert("Precio inválido para este producto. Revisa los datos.");
+              return;
+            }
 
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  const existingProduct = cart.find((p) => p.id === productId);
-  if (existingProduct) {
-    existingProduct.quantity += 1;
-  } else {
-    cart.push({
-      id: productId,
-      name: productName,
-      price: productPrice,
-      quantity: 1,
-    });
-  }
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const existingProduct = cart.find((p) => p.id === productId);
+            if (existingProduct) {
+              existingProduct.quantity += 1;
+            } else {
+              cart.push({
+                id: productId,
+                name: productName,
+                price: productPrice,
+                quantity: 1,
+              });
+            }
 
-  localStorage.setItem("cart", JSON.stringify(cart));
-  updateCartCount();
-  abrirCarrito();
-  alert("Producto añadido al carrito");
-});
-
+            localStorage.setItem("cart", JSON.stringify(cart));
+            updateCartCount();
+            abrirCarrito();
+            alert("Producto añadido al carrito");
+          });
       } else {
-        console.warn(`No se encontró contenedor para la categoría: "${categoriaNormalizada}"`);
-        console.log('Categorías disponibles:', Object.keys(secciones));
+        console.warn(
+          `No se encontró contenedor para la categoría: "${categoriaNormalizada}"`
+        );
+        console.log("Categorías disponibles:", Object.keys(secciones));
       }
     });
   }
@@ -144,20 +153,25 @@ card.querySelector(".add-to-cart").addEventListener("click", function () {
   // Función auxiliar para elegir imagen según el nombre
   function obtenerImagen(nombre) {
     const n = nombre.toLowerCase();
-    
+
     // Tortas
     if (n.includes("guanábana") || n.includes("guanabana")) return "torta2.jpg";
     if (n.includes("crocante") || n.includes("vainilla")) return "torta4.jpg";
     if (n.includes("bosque") || n.includes("fresas")) return "torta5.jpg";
     if (n.includes("butter") || n.includes("cream")) return "torta6.jpg";
-    if (n.includes("temática") || n.includes("tematica") || n.includes("personalizada")) return "torta8.jpg";
+    if (
+      n.includes("temática") ||
+      n.includes("tematica") ||
+      n.includes("personalizada")
+    )
+      return "torta8.jpg";
     if (n.includes("tres leches")) return "torta3.jpg";
-    
+
     // Bocaditos
     if (n.includes("alfajor")) return "bocadito1.jpg";
     if (n.includes("cupcake") || n.includes("mini")) return "bocadito3.jpg";
     if (n.includes("profiterol")) return "bocadito4.jpg";
-    
+
     return "default.jpg";
   }
 
@@ -167,8 +181,12 @@ card.querySelector(".add-to-cart").addEventListener("click", function () {
     searchInput.addEventListener("keyup", function (e) {
       const searchTerm = e.target.value.toLowerCase();
       document.querySelectorAll(".producto").forEach((item) => {
-        const productName = item.querySelector(".card-title").textContent.toLowerCase();
-        const productDesc = item.querySelector(".card-text").textContent.toLowerCase();
+        const productName = item
+          .querySelector(".card-title")
+          .textContent.toLowerCase();
+        const productDesc = item
+          .querySelector(".card-text")
+          .textContent.toLowerCase();
 
         item.closest(".col").style.display =
           productName.includes(searchTerm) || productDesc.includes(searchTerm)
@@ -224,9 +242,9 @@ function cerrarCarrito() {
 function actualizarCarrito() {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   const cartItems = document.getElementById("cart-items");
-  
+
   if (!cartItems) return;
-  
+
   cartItems.innerHTML = "";
 
   if (cart.length === 0) {
@@ -255,7 +273,7 @@ function updateTotals(subtotal, extras, total) {
   const subtotalEl = document.getElementById("subtotal");
   const extrasEl = document.getElementById("extras");
   const totalEl = document.getElementById("total");
-  
+
   if (subtotalEl) subtotalEl.innerText = subtotal.toFixed(2);
   if (extrasEl) extrasEl.innerText = extras.toFixed(2);
   if (totalEl) totalEl.innerText = total.toFixed(2);
