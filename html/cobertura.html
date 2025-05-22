@@ -6,81 +6,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Tortas D'Rossi</title>
 
+    <!-- Favicon -->
     <link rel="icon" type="image/jpg" href="/imagen/logopasteleria.jpg" />
 
+    <!-- CSS personalizado -->
     <link rel="stylesheet" href="/css/cobertura.css" />
 
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
         crossorigin="anonymous" />
 
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 
 <body>
-    <nav class="navbar-drossi">
-        <div class="container-fluid p-0">
-            <div class="row g-0 align-items-center d-flex d-md-none">
-                <div class="col-2">
-                    <button class="menu-btn" onclick="toggleMenu()">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
-                <div class="col-7">
-                    <div class="search-container">
-                        <span class="user-icon">
-                            <i class="far fa-user"></i>
-                        </span>
-                    </div>
-                </div>
-                <div class="col- d-flex justify-content-end">
-                    <div class="cart-and-logo d-flex align-items-center">
-                        <button class="cart-btn" id="botonCarrito">
-                            <i class="fas fa-shopping-cart"></i>
-                        </button>
-                        <div class="logo-container">
-                            <img src="/imagen/logopasteleria.jpg" alt="Logo D'Rossi" class="logo">
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-drossi">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <button class="menu-btn" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
 
-            <!-- Vista para tablets y desktop -->
-            <div class="row g-0 align-items-center d-none d-md-flex">
-                <div class="col-auto">
-                    <button class="menu-btn" onclick="toggleMenu()">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
-                <div class="col-auto search-col">
-                    <!-- Aquí puedes agregar algo como un campo de búsqueda si lo deseas -->
-                </div>
-                <div class="col"></div>
-                <div class="col-auto d-flex align-items-center">
-                    <button class="cart-btn">
-                        <i class="fas fa-shopping-cart"></i>
-                    </button>
-                    <div class="logo-container">
-                        <img src="/imagen/logopasteleria.jpg" alt="Logo D'Rossi" class="logo">
-                    </div>
+            <ul class="menu list-unstyled d-none d-md-flex mb-0">
+                <li class="me-3"><a href="/html/ventanaprincipal.html">Inicio</a></li>
+                <li class="me-3"><a href="/html/cobertura.html">Cobertura</a></li>
+                <li><a href="/html/iniciosesion.html">Inicio de sesión</a></li>
+            </ul>
+
+            <div class="cart-and-logo d-flex align-items-center">
+                <button class="cart-btn" id="botonCarrito"><i class="fas fa-shopping-cart"></i></button>
+                <div class="logo-container ms-2">
+                    <img src="/imagen/logopasteleria.jpg" alt="Logo D'Rossi" class="logo" />
                 </div>
             </div>
         </div>
     </nav>
 
+
+    <!-- Menú lateral -->
+    <div class="menu-lateral" id="menuLateral">
+        <div class="cerrar-menu" onclick="toggleMenu()">
+            <i class="fas fa-times"></i>
+        </div>
+        <ul class="menu-opciones">
+            <li><a href="/html/ventanaprincipal.html">Inicio</a></li>
+            <li><a href="/html/pasteleria.html">Pastelería</a></li>
+            <li><a href="/html/cobertura.html">Cobertura</a></li>
+            <li><a href="/html/iniciosesion.html">Inicio de Sesión</a></li>
+        </ul>
+    </div>
+
+    <!-- Contenido principal -->
     <div class="container">
         <div class="left-panel">
+            <!-- Buscar dirección -->
             <div class="ingresar-direccion">
-                <input type="text" placeholder="Ingresar dirección" />
-                <button type="button" class="order-button">Usar ubicación actual</button>
+                <input type="text" id="inputDireccion" placeholder="Ingresar dirección" />
+                <button id="btnUbicacion" class="btn-ubicacion" type="button">Usar ubicación actual</button>
             </div>
 
-            <!-- Tarjetas de ubicación -->
+            <!-- Sucursal 1 -->
             <div class="location-card">
                 <h3>D'Rossi Salvador Allende</h3>
                 <div class="badges">
-                    <span class="order-button">Ordena aquí</span>
-                    <span class="badge pickup">Recojo en tienda</span>
-                    <span class="badge delivery">Delivery</span>
+                    <button class="order-button" type="button">Ordena aquí</button>
+                    <button class="badge pickup" type="button">Recojo en tienda</button>
+                    <button class="badge delivery" type="button">Delivery</button>
                 </div>
                 <p>Av. Salvador Allende Nª, Pucallpa, Perú</p>
                 <p>Teléfono: 973338295</p>
@@ -96,12 +88,13 @@
                 </ul>
             </div>
 
+            <!-- Sucursal 2 -->
             <div class="location-card">
                 <h3>D'Rossi Prolongación Libertad</h3>
                 <div class="badges">
-                    <span class="order-button">Ordena aquí</span>
-                    <span class="badge closed">Recojo en tienda</span>
-                    <span class="badge closed">Delivery</span>
+                    <button class="order-button" type="button">Ordena aquí</button>
+                    <button class="badge pickup" type="submit">Recojo en tienda</button>
+                    <button class="badge delivery" type="submit">Delivery</button>
                 </div>
                 <p>Prolongación Libertad 1179, Pucallpa 25001</p>
                 <p>Teléfono: 916797468</p>
@@ -118,7 +111,7 @@
             </div>
         </div>
 
-        <!-- Mapa de Google -->
+        <!-- Mapa Google -->
         <div class="map-container">
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3947.129427722828!2d-74.54073052522713!3d-8.388928691649054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91a3bd8b9c954d77%3A0xb523dabdce142a68!2sD&#39;Rossi%20Pasteleria!5e0!3m2!1ses!2spe!4v1746277093892!5m2!1ses!2spe"
@@ -131,6 +124,7 @@
     <footer class="bg-dark text-white py-4">
         <div class="container">
             <div class="row">
+                <!-- Contacto -->
                 <div class="col-md-4 mb-3">
                     <h4>Contacto</h4>
                     <address>
@@ -139,12 +133,16 @@
                         <p><i class="fas fa-envelope"></i> info@drossi.com</p>
                     </address>
                 </div>
+
+                <!-- Horarios -->
                 <div class="col-md-4 mb-3">
                     <h4>Horarios</h4>
                     <p>Lunes a Viernes: 9am - 7pm</p>
                     <p>Sábados: 10am - 6pm</p>
                     <p>Domingos: 10am - 2pm</p>
                 </div>
+
+                <!-- Redes sociales -->
                 <div class="col-md-4 mb-3">
                     <h4>Síguenos</h4>
                     <div class="social-links">
@@ -154,6 +152,8 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Derechos -->
             <div class="row mt-3">
                 <div class="col-12 text-center">
                     <p>&copy; 2025 Pastelería D'Rossi. Todos los derechos reservados.</p>
@@ -162,6 +162,7 @@
         </div>
     </footer>
 
+    <!-- JS personalizado -->
     <script src="/js/cobertura.js"></script>
 </body>
 

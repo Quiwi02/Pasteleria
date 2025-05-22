@@ -509,112 +509,94 @@ footer p {
 }
 
 /* ===== MEDIA QUERIES ===== */
+/* Ajustes generales para pantallas pequeñas */
 @media (max-width: 768px) {
-  header {
+  header .container {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
   }
-
-  .contenido {
-    flex-direction: column;
-    gap: 10px;
+  
+  header nav {
+    width: 100%;
+    justify-content: space-around;
+  }
+  
+  header nav a {
+    font-size: 14px;
   }
 
-  .procesos {
-    padding: 15px 20px;
+  /* Menú lateral */
+  .menu-lateral {
+    width: 70%;
   }
 
-  .resumen-pedido {
-    margin: 15px 10px;
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 375px) {
-  .menu-btn {
-    font-size: 22px;
-    margin-left: 8px;
-  }
-
-  .search-container {
-    padding: 5px 10px;
-  }
-}
-
-@media (min-width: 768px) {
-  .navbar-drossi {
-    padding: 15px 0;
-  }
-
-  .search-col {
-    max-width: 350px;
-  }
-
-  .menu-btn {
-    font-size: 26px;
-  }
-
-  .search-container {
-    padding: 8px 15px;
-  }
-}
-
-@media (min-width: 992px) {
-  .navbar-drossi {
-    padding: 18px 0;
-  }
-
-  .search-col {
-    max-width: 400px;
-  }
-
-  .menu-btn {
-    font-size: 28px;
-  }
-}
-
-@media (max-width: 991.98px) {
-  .col {
-    flex: 0 0 calc(50% - 30px);
-    max-width: calc(50% - 30px);
-  }
-
-  .footer-section {
-    flex: 0 0 calc(50% - 30px);
-  }
-}
-
-@media (max-width: 767.98px) {
-  .navbar {
+  /* Contenedor principal */
+  .container > .row {
     flex-direction: column;
   }
 
-  .navbar-nav {
-    margin: 15px 0;
-  }
-
-  .col {
-    flex: 0 0 100%;
+  /* Columnas del contenido principal */
+  .col-md-6 {
+    width: 100%;
     max-width: 100%;
+    padding: 0 15px;
   }
 
-  .card-img-top {
-    height: 180px;
+  /* Botones de modalidad y comprobante */
+  .proceso-box .d-flex.gap-2 button {
+    flex: 1 1 45%;
   }
 
-  .footer-section {
-    flex: 0 0 100%;
+  /* Resumen del pedido */
+  .resumen-box {
+    width: 100%;
+    margin-top: 20px;
   }
 
-  footer {
-    text-align: center;
-  }
-
-  .social-links {
-    justify-content: center;
+  /* Botones de métodos de pago */
+  .resumen-box .d-flex.gap-2 > * {
+    flex: 1 1 45%;
   }
 }
+
+/* Ajustes para pantallas extra pequeñas */
+@media (max-width: 480px) {
+  header .container {
+    padding: 10px;
+  }
+  
+  header nav {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  header nav a {
+    font-size: 12px;
+  }
+
+  .menu-btn {
+    font-size: 18px;
+  }
+
+  /* Texto y botones */
+  .proceso-box h5,
+  .resumen-box h5 {
+    font-size: 18px;
+  }
+  
+  .proceso-box button,
+  .resumen-box button {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+  
+  /* Input para cupón */
+  input.form-control {
+    font-size: 14px;
+  }
+}
+
 
 /* ===== ANIMACIONES ===== */
 @keyframes fadeIn {

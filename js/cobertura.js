@@ -1,60 +1,90 @@
-// Función para alternar la visibilidad del menú móvil
+// Función para abrir/cerrar menú lateral
 function toggleMenu() {
-    const menu = document.querySelector('.navbar-drossi');
-    menu.classList.toggle('menu-visible'); // Cambia la clase al hacer clic en el menú
+  const menuLateral = document.getElementById('.menu-lateral');
+  menuLateral.classList.toggle('activo');
 }
 
-// Mostrar u ocultar los horarios cuando se haga clic en "Ver horarios"
-document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".ver-horarios").forEach(button => {
-        button.addEventListener("click", () => {
-            const horarios = button.nextElementSibling;
-            if (horarios.style.display === "block") {
-                horarios.style.display = "none";
-                button.textContent = "Ver horarios";
-            } else {
-                horarios.style.display = "block";
-                button.textContent = "Ocultar horarios";
-            }
-        });
-    });
-});
-
-// Función para cambiar la dirección en la que el usuario hace el pedido
-function cambiarDireccion() {
-    const direccion = document.querySelector('.ingresar-direccion input').value;
-    if (direccion) {
-        alert("Dirección cambiada a: " + direccion);
-    } else {
-        alert("Por favor ingresa una dirección válida.");
-    }
-}
-
-// Función para cambiar la dirección a la ubicación actual
-function usarUbicacionActual() {
-    // Puedes obtener la ubicación actual utilizando la Geolocalización si lo deseas.
-    // Aquí se simula con una dirección predefinida.
-    alert("Usando ubicación actual: Av. Salvador Allende, Pucallpa.");
-}
-
-// Función para manejar el clic en "Ordena aquí"
-document.querySelectorAll(".order-button").forEach(button => {
-    button.addEventListener("click", () => {
-        alert("¡Gracias por ordenar con nosotros!");
-    });
-});
-
-// Evento para mostrar/ocultar el menú en dispositivos móviles
-const menuBtn = document.querySelector('.menu-btn');
-if (menuBtn) {
-    menuBtn.addEventListener('click', () => {
-        const navbar = document.querySelector('.navbar-drossi');
-        navbar.classList.toggle('menu-visible');
-    });
-}
-
-// Opcional: agregar animaciones para el menú
+// Esperar a que DOM cargue para asignar eventos
 document.addEventListener('DOMContentLoaded', () => {
-    const menu = document.querySelector('.navbar-drossi');
-    menu.classList.add('transition-all'); // Agregar una transición CSS para el menú si es necesario.
+  // Toggle menú
+  document.querySelector('.menu-btn').addEventListener('click', toggleMenu);
+  document.querySelector('.cerrar-menu').addEventListener('click', toggleMenu);
+
+  // Botón carrito
+  const botonCarrito = document.getElementById('botonCarrito');
+  botonCarrito.addEventListener('click', () => {
+    alert('Carrito de compras está vacío o no implementado aún.');
+  });
+
+  // Botón ubicación actual
+  const btnUbicacion = document.getElementById('btnUbicacion');
+  const inputDireccion = document.getElementById('inputDireccion');
+  btnUbicacion.addEventListener('click', () => {
+    if (!navigator.geolocation) {
+      alert('Geolocalización no es soportada por tu navegador.');
+      return;
+    }
+    btnUbicacion.disabled = true;
+    btnUbicacion.textContent = 'Obteniendo ubicación...';
+
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        const { latitude, longitude } = pos.coords;
+        // Puedes cambiar esto para hacer reverse geocoding con API externa
+        inputDireccion.value = `Latitud: ${latitude.toFixed(5)}, Longitud: ${longitude.toFixed(5)}`;
+        btnUbicacion.textContent = 'Usar ubicación actual';
+        btnUbicacion.disabled = false;
+      },
+      (err) => {
+        alert('Error al obtener ubicación: ' + err.message);
+        btnUbicacion.textContent = 'Usar ubicación actual';
+        btnUbicacion.disabled = false;
+      }
+    );
+  });
+
+  // Mostrar/ocultar horarios por sucursal
+  const botonesVerHorarios = document.querySelectorAll('.ver-horarios');
+  botonesVerHorarios.forEach((boton) => {
+    boton.addEventListener('click', () => {
+      const horarios = boton.nextElementSibling;
+      if (!horarios) return;
+      if (horarios.style.display === 'none' || horarios.style.display === '') {
+        horarios.style.display = 'block';
+        boton.textContent = 'Ocultar horarios';
+      } else {
+        horarios.style.display = 'none';
+        boton.textContent = 'Ver horarios';
+      }
+    });
+  });
+
+  // Botones "Ordena aquí", "Recojo en tienda" y "Delivery"
+  const locationCards = document.querySelectorAll('.location-card');
+  locationCards.forEach((card) => {
+    const nombreSucursal = card.querySelector('h3').textContent;
+
+    // Ordena aquí
+    const btnOrdena = card.querySelector('.order-button');
+    btnOrdena.addEventListener('click', () => {
+      alert(`Has seleccionado ordenar en la sucursal: ${nombreSucursal}`);
+      // Aquí iría lógica para redirigir o mostrar pedido
+    });
+
+    // Recojo en tienda
+    const btnRecojo = card.querySelector('.badge.pickup');
+    if (btnRecojo) {
+      btnRecojo.addEventListener('click', () => {
+        alert(`Has seleccionado "Recojo en tienda" en ${nombreSucursal}`);
+      });
+    }
+
+    // Delivery
+    const btnDelivery = card.querySelector('.badge.delivery');
+    if (btnDelivery) {
+      btnDelivery.addEventListener('click', () => {
+        alert(`Has seleccionado "Delivery" en ${nombreSucursal}`);
+      });
+    }
+  });
 });

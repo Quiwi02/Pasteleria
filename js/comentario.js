@@ -1,56 +1,31 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const btnEnviar = document.getElementById('btnEnviar');
-  const inputComentario = document.getElementById('comentario');
+// Función para mostrar/ocultar el menú lateral
+function toggleMenu() {
+    const menuLateral = document.getElementById("menuLateral");
+    menuLateral.classList.toggle("activo");
+}
 
-  btnEnviar.addEventListener('click', () => {
-    const comentario = inputComentario.value.trim();
+// Función para mostrar/ocultar el carrito (aunque no hay carrito en esta página)
+function toggleCarrito() {
+    alert("Función de carrito no disponible en esta página.");
+}
 
-    if (comentario === '') {
-      alert('Por favor escribe un comentario antes de enviarlo.');
-      return;
-    }
+// Función para manejar el envío del comentario
+document.addEventListener("DOMContentLoaded", () => {
+    const btnEnviar = document.getElementById("btnEnviar");
+    const comentarioInput = document.getElementById("comentario");
 
-    // Aquí puedes guardar el comentario en localStorage o enviarlo a un servidor si lo necesitas
-    localStorage.setItem('comentarioUsuario', comentario);
+    btnEnviar.addEventListener("click", () => {
+        const comentario = comentarioInput.value.trim();
 
-    alert('¡Gracias por tu comentario!');
-    inputComentario.value = '';
-  });
-
-  window.toggleMenu = function () {
-        var menuLateral = document.getElementById('menuLateral');
-        if (menuLateral) {
-            menuLateral.classList.toggle('activo');
+        if (comentario.length === 0) {
+            alert("Por favor, escribe un comentario antes de enviar.");
+            return;
         }
-    };
 
-    var botonCerrar = document.querySelector('.cerrar-menu');
-    if (botonCerrar) {
-        botonCerrar.addEventListener('click', function () {
-            var menuLateral = document.getElementById('menuLateral');
-            if (menuLateral) {
-                menuLateral.classList.remove('activo');
-            }
-        });
-    }
+        // Aquí podrías hacer algo más, como enviarlo a un servidor
+        alert("¡Gracias por tu comentario!");
 
-    document.addEventListener('click', function (event) {
-        var menuLateral = document.getElementById('menuLateral');
-        var menuBtn = document.querySelectorAll('.menu-btn');
-
-        if (menuLateral && menuLateral.classList.contains('activo')) {
-            let clickedOnButton = false;
-            menuBtn.forEach(function (btn) {
-                if (btn.contains(event.target)) {
-                    clickedOnButton = true;
-                }
-            });
-
-            if (!menuLateral.contains(event.target) && !clickedOnButton) {
-                menuLateral.classList.remove('activo');
-            }
-        }
+        // Limpiar el campo después del envío
+        comentarioInput.value = "";
     });
 });
-
-

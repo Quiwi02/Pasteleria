@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,9 +19,10 @@
   <!-- HEADER -->
   <header class="container-fluid py-3 border-bottom">
     <div class="container d-flex justify-content-between align-items-center">
-      <a href="/html/ventanaprincipal.html" class="logo">
-        <img src="/imagen/logopasteleria.jpg" alt="Logo D'Rossi" height="50">
-      </a>
+      <!-- Botón Menú -->
+      <button class="menu-btn" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </button>
       <nav class="d-flex gap-4">
         <a class="text-white fw-bold text-decoration-none" href="/html/ventanaprincipal.html">Inicio</a>
         <a class="text-white fw-bold text-decoration-none" href="/html/cobertura.html">Cobertura</a>
@@ -34,8 +36,22 @@
           <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
         </a>
       </div>
+      <a href="/html/ventanaprincipal.html" class="logo">
+        <img src="/imagen/logopasteleria.jpg" alt="Logo D'Rossi" height="50">
+      </a>
     </div>
   </header>
+  <!-- Menú lateral -->
+  <div class="menu-lateral" id="menuLateral">
+    <div class="cerrar-menu" onclick="toggleMenu()">
+      <i class="fas fa-times"></i>
+    </div>
+    <ul class="menu-opciones">
+      <li><a href="/html/ventanaprincipal.html">Inicio</a></li>
+      <li><a href="/html/cobertura.html">Cobertura</a></li>
+      <li><a href="/html/iniciosesion.html">Inicio de Sesión</a></li>
+    </ul>
+  </div>
 
   <!-- BOTÓN VOLVER -->
   <div class="container my-3">
@@ -49,7 +65,7 @@
     <div class="row">
 
       <!-- COLUMNA IZQUIERDA -->
-      <div class="col-md-6">
+      <div class="col-12 col-md-6">
         <!-- Proceso de pago -->
         <div class="proceso-box mb-4 p-3 border rounded">
           <h5 class="fw-bold">Modalidad de entrega</h5>
@@ -86,7 +102,7 @@
       </div>
 
       <!-- COLUMNA DERECHA -->
-      <div class="col-md-6">
+      <div class="col-12 col-md-6">
         <div class="resumen-box mb-4 p-3 border rounded">
           <h5 class="fw-bold mb-3">Resumen del pedido</h5>
 
