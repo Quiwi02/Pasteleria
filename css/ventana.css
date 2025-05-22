@@ -287,7 +287,7 @@
 
 /* ===== FOOTER ===== */
 footer {
-  background-color: var(--dark-color);
+  background-color: #f8bbd0;
   color: white;
   padding: 50px 0 20px;
   text-align: center;
@@ -308,7 +308,7 @@ footer {
 }
 
 footer h4 {
-  color: var(--accent-color);
+  color: white;
   font-weight: 600;
   margin-bottom: 1.5rem;
   font-size: 20px;

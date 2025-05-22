@@ -248,7 +248,7 @@ textarea {
    FOOTER
 ============================ */
 footer {
-    background-color: var(--dark-color);
+    background-color: #f8bbd0;
     color: white;
     padding: 50px 0 20px;
 }
@@ -268,7 +268,7 @@ footer {
 }
 
 footer h4 {
-    color: var(--accent-color);
+    color: white;
     font-weight: 600;
     margin-bottom: 1.5rem;
     font-size: 20px;
@@ -292,7 +292,7 @@ footer p {
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.1);
     margin-right: 10px;
-    color: white;
+    color: black;
     transition: background-color 0.3s ease;
 }
 
