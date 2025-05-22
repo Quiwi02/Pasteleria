@@ -1,6 +1,6 @@
 // Función para abrir/cerrar menú lateral
 function toggleMenu() {
-  const menuLateral = document.getElementById('.menu-lateral');
+  const menuLateral = document.querySelector('.menu-lateral');
   menuLateral.classList.toggle('activo');
 }
 
