@@ -202,7 +202,7 @@ input {
 }
 
 /* Botones de registro */
-.boton-registro{
+.boton-registro {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -241,32 +241,101 @@ button:hover {
     transition: color 0.3s ease;
 }
 
-.imagenes-registro i:hover {
+.imagenes-registro i:hover0 {
     color: white;
+    background-color: transparent;
+}
+
+.imagenes-registro button {
+    border-radius: px;
+    border: none;
+    width: auto;
+    height: 28px;
+}
+
+/*-- ESTILOS PARA BOTÓN GOOGLE --*/
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #ddd;
+}
+
+.divider span {
+    padding: 0 15px;
+    color: #666;
+    font-size: 14px;
+}
+
+.google-btn {
+    width: 100%;
+    padding: 12px 20px;
+    border: 2px solid #e0e0e0;
+    background: white;
+    color: #333;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.google-btn:hover {
+    border-color: #4285f4;
+    box-shadow: 0 2px 8px rgba(66, 133, 244, 0.15);
+    background: #f8f9ff;
+}
+
+.google-btn:active {
+    transform: translateY(1px);
+}
+
+.google-icon {
+    flex-shrink: 0;
 }
 
 /* Estilos responsivos para pantallas menores a 768px */
 @media (max-width: 768px) {
-    .container-iniciosesion, .container-registro {
+
+    .container-iniciosesion,
+    .container-registro {
         flex-direction: column;
         width: 90%;
         padding: 20px;
     }
 
-    .logo-iniciosesion, .logo-registro {
+    .logo-iniciosesion,
+    .logo-registro {
         margin-bottom: 20px;
     }
 
-    .form-iniciosesion, .form-registro {
+    .form-iniciosesion,
+    .form-registro {
         padding-left: 0;
         width: 100%;
     }
 
-    .h2-iniciosesion, .h2 {
+    .h2-iniciosesion,
+    .h2 {
         text-align: center;
     }
 
-    .boton-inicio, .boton-registro {
+    .boton-inicio,
+    .boton-registro {
         width: 100%;
     }
 
@@ -279,31 +348,38 @@ button:hover {
         font-size: 14px;
     }
 
-    .imagenes-iniciosesion, .imagenes-registro {
+    .imagenes-iniciosesion,
+    .imagenes-registro {
         gap: 10px;
     }
 
-    .imagenes-iniciosesion i, .imagenes-registro i {
+    .imagenes-iniciosesion i,
+    .imagenes-registro i {
         font-size: 20px;
     }
 }
 
 /* Estilos para pantallas menores a 480px (móviles pequeños) */
 @media (max-width: 480px) {
-    .logo-iniciosesion img, .logo-registro img {
+
+    .logo-iniciosesion img,
+    .logo-registro img {
         width: 120px;
         height: 120px;
     }
 
-    .h2-iniciosesion, h2 {
+    .h2-iniciosesion,
+    h2 {
         font-size: 20px;
     }
 
-    .label-iniciosesion, label {
+    .label-iniciosesion,
+    label {
         font-size: 14px;
     }
 
-    .input-iniciosesion, input {
+    .input-iniciosesion,
+    input {
         height: 32px;
     }
 
@@ -316,4 +392,3 @@ button:hover {
         font-size: 0.85rem;
     }
 }
-

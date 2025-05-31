@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-// Registro
+// Registro-Backend
 document.addEventListener("DOMContentLoaded", function () {
     // Obtener las referencias del DOM
     const container = document.querySelector(".container-registro");

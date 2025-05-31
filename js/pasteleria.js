@@ -133,6 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 name: productName,
                 price: productPrice,
                 quantity: 1,
+                Image: `/imagen/${obtenerImagen(producto.nombre)}` // 👈 Añadir imagen
               });
             }
 
