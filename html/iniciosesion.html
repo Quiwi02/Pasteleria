@@ -14,8 +14,15 @@
 </head>
 
 <body>
+    <div class="container">
+        <!-- CONTENEDOR DE TÍTULOS COMO ENCABEZADO -->
+        <div class="container-titles">
+            <div class="titles">
+                <h2 id="tab-login" class="active">Iniciar de sesión</h2>
+                <h2 id="tab-signup" class="inactive">Registrarse</h2>
+            </div>
+        </div>
 
-    <div id="auth-wrapper">
         <!-- INICIO DE SESIÓN -->
         <div class="container-iniciosesion" id="inicio-sesion">
             <div class="logo-iniciosesion">
@@ -24,8 +31,6 @@
 
             <div class="form-iniciosesion">
                 <form id="loginForm">
-                    <h2 class="h2-iniciosesion">Inicio de sesión</h2>
-
                     <div class="entrada-iniciosesion">
                         <label class="label-iniciosesion" for="email-login">Email</label>
                         <input class="input-iniciosesion" type="email" id="email-login" name="email-login"
@@ -39,14 +44,10 @@
                     </div>
 
                     <div class="olvidar">
-                        <a href="#">¿Olvidaste tu contraseña?</a>
+                        <a id="reset">¿Olvidaste tu contraseña?</a>
                     </div>
 
-                    <div class="imagenes-iniciosesion">
-                        <a href="http://facebook.com/" target="_blank" aria-label="Iniciar con Facebook">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                    </div>
+
                     <button type="button" id="google-register-btn" class="google-btn">
                         <svg class="google-icon" viewBox="0 0 24 24" width="20" height="20">
                             <path fill="#4285F4"
@@ -63,7 +64,6 @@
 
                     <div class="boton-inicio">
                         <button type="submit" id="btn-iniciar" class="iniciosesion">Iniciar sesión</button>
-                        <button type="button" id="btn-registrarse" class="registrarse">Registrate</button>
                     </div>
                 </form>
             </div>
@@ -77,37 +77,57 @@
 
             <div class="form-registro">
                 <form id="registroForm">
-                    <h2>Registro</h2>
 
                     <div class="entrada-registro">
                         <label for="nombre">Nombre de usuario</label>
-                        <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+                        <input class="input-registro" type="text" id="nombre" name="nombre" placeholder="Nombre"
+                            required>
                     </div>
 
                     <div class="entrada-registro">
                         <label for="textEmail">Email</label>
-                        <input type="email" id="textEmail" name="email" placeholder="Email" required>
+                        <input class="input-registro" type="email" id="textEmail" name="email" placeholder="Email"
+                            required>
                     </div>
 
                     <div class="entrada-registro">
                         <label for="password-registro">Contraseña</label>
-                        <input type="password" id="password-registro" name="password" placeholder="Contraseña" required>
+                        <input class="input-registro" type="password" id="password-registro" name="password"
+                            placeholder="Contraseña" required>
                     </div>
 
-                    <div class="imagenes-registro">
-                        <a href="http://facebook.com/" target="_blank" aria-label="Registrarse con Facebook">
-                            <i class="fab fa-facebook"></i>
-                        </a>
+                    <div class="checkbox-terminos">
+                        <input type="checkbox" id="terminos" name="terminos" required>
+                        <label for="terminos">
+                            He leído y acepto los términos, condiciones, políticas y tratamiento de datos personales
+                        </label>
                     </div>
+
+
 
                     <div class="boton-registro">
                         <button type="submit" class="registrate">Registrate</button>
-                        <button type="button" id="btn-volver-inicio" class="btn-cambio">Volver al inicio</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+
+    <!-- MODAL OLVIDASTE TU CONTRASEÑA -->
+    <div class="modal-reset" id="reset-password">
+        <div class="modal-content-reset">
+            <span class="close-reset" id="close-reset">&times;</span>
+            <form id="reset-form" action="#">
+                <h1>¿Olvidaste tu contraseña?</h1>
+                <p>Por favor, ingresa tu correo electrónico. Te enviaremos un link para crear tu nueva contraseña.</p>
+                <div class="input-email">
+                    <input class="input-reset" type="email" name="email" placeholder="Email" required>
+                </div>
+                <button type="submit" class="btn-reset">Enviar</button>
+            </form>
+        </div>
+    </div>
+
 
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";

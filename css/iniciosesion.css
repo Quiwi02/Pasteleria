@@ -1,260 +1,152 @@
-/* Reset básico */
+/* === Google Fonts === */
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Playfair+Display:wght@500&display=swap');
+
+/* === Reset global === */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Abel', sans-serif;
 }
 
-/* Fondo general */
+/* === Body general === */
 body {
-    background-color: #ec9eb9;
+    background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    opacity: 0.95;
 }
 
-/* Contenedor principal del inicio de sesion */
-.container-iniciosesion {
-    display: flex;
-    background-color: #f8bbd0;
-    border-radius: 15px;
-    padding: 30px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    width: 600px;
-    align-items: center;
+.container {
+    padding: 20px;
     margin: auto;
     flex-direction: row;
+    border-radius: 15px;
+    box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
+    background-image: linear-gradient(-225deg, #E3FDF5 50%, #FFE6FA 50%);
 }
 
-/* Logo del inicio de sesion*/
-.logo-iniciosesion {
-    flex: 1;
+/* === Contenedor Principal === */
+.container-titles {
     text-align: center;
 }
 
-.logo-iniciosesion img {
-    border-radius: 150px;
+.container-iniciosesion,
+.container-registro {
+    display: flex;
+    padding: 30px;
+    width: 600px;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.container-registro {
+    display: none;
+}
+
+.container-reset {
+    display: none;
+}
+
+/* === Logo circular === */
+.logo-iniciosesion img,
+.logo-registro img {
+    border-radius: 50%;
     width: 150px;
     height: 150px;
 }
 
-/* Formulario del inicio de sesion */
-.form-iniciosesion {
+/* === Formularios === */
+.form-iniciosesion,
+.form-registro,
+.form-reset {
     flex: 2;
     padding-left: 20px;
 }
 
-/* Título del inicio de sesion */
-.h2-iniciosesion {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-/* Campos del formulario del inicio de sesion */
-.entrada-iniciosesion {
-    margin-bottom: 20px;
-    text-align: left;
-}
-
-.label-iniciosesion {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 16px;
-    color: #333;
-    margin-bottom: 5px;
-    display: block;
-}
-
-.input-iniciosesion {
-    width: 100%;
-    height: 35px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    padding: 5px 10px;
-    font-size: 14px;
-}
-
-/* Enlace olvidaste contraseña */
-.olvidar {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.olvidar a {
-    color: black;
-    text-decoration: none;
-    font-size: 0.95rem;
-    transition: color 0.3s ease, text-decoration 0.3s ease;
-}
-
-.olvidar a:hover {
-    color: white;
-    text-decoration: underline;
-}
-
-/* Botones de inicio de sesion*/
-.boton-inicio {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.iniciosesion,
-.registrarse {
+/* === Inputs === */
+.input-iniciosesion,
+input {
     width: 100%;
     height: 40px;
     border-radius: 10px;
-    border: 1px solid black;
-    font-size: 16px;
-    cursor: pointer;
-    margin-bottom: 10px;
-    background-color: transparent;
-    color: black;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    font-size: 15px;
+    color: #333;
+    transition: 0.3s ease;
 }
 
+.input-iniciosesion:focus,
+.input-registro:focus,
+.input-reset:focus {
+    border-color: #a8edea;
+    outline: none;
+    background-color: #fff;
+}
+
+/* === Etiquetas === */
+.label-iniciosesion,
+label {
+    font-size: 15px;
+    color: #3e403f;
+    margin-bottom: 6px;
+    display: block;
+}
+
+/* === Terminos y Condiciones === */
+.checkbox-terminos {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 10px;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.4;
+}
+
+.checkbox-terminos input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: #4CAF50;
+    /* Verde o el color que uses */
+}
+
+.checkbox-terminos label {
+    cursor: pointer;
+}
+
+/* === Botones === */
+button,
+.iniciosesion,
+.registrarse {
+    width: 100%;
+    height: 45px;
+    border-radius: 10px;
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+    font-family: 'Abel', sans-serif;
+}
+
+button:hover,
 .iniciosesion:hover,
 .registrarse:hover {
     background-color: black;
     color: white;
+    transform: translateY(2px);
 }
 
-/* Íconos sociales del inicio de sesion*/
-.imagenes-iniciosesion {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 20px;
-}
-
-.imagenes-iniciosesion i {
-    font-size: 24px;
-    color: black;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.imagenes-iniciosesion i:hover {
-    color: white;
-}
-
-/* Contenedor principal del registro */
-.container-registro {
-    display: none;
-    background-color: #f8bbd0;
-    border-radius: 15px;
-    padding: 30px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    width: 600px;
-    align-items: center;
-    margin: auto;
-    flex-direction: row;
-}
-
-/* Logo del registro*/
-.logo-registro {
-    flex: 1;
-    text-align: center;
-}
-
-.logo-registro img {
-    border-radius: 150px;
-    width: 150px;
-    height: 150px;
-}
-
-/* Formulario del registro*/
-.form-registro {
-    flex: 2;
-    padding-left: 20px;
-}
-
-/* Título del registro*/
-h2 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-/* Campos del formulario del registro */
-.entrada-registro {
-    margin-bottom: 20px;
-    text-align: left;
-}
-
-label {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 16px;
-    color: #333;
-    margin-bottom: 5px;
-    display: block;
-}
-
-input {
-    width: 100%;
-    height: 35px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    padding: 5px 10px;
-    font-size: 14px;
-}
-
-/* Botones de registro */
-.boton-registro {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-button {
-    width: 100%;
-    height: 40px;
-    border-radius: 10px;
-    border: 1px solid black;
-    font-size: 16px;
-    cursor: pointer;
-    margin-bottom: 10px;
-    background-color: transparent;
-    color: black;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-button:hover {
-    background-color: black;
-    color: white;
-}
-
-/* Íconos sociales del registro*/
-.imagenes-registro {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 20px;
-}
-
-.imagenes-registro i {
-    font-size: 24px;
-    color: black;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.imagenes-registro i:hover0 {
-    color: white;
-    background-color: transparent;
-}
-
-.imagenes-registro button {
-    border-radius: px;
-    border: none;
-    width: auto;
-    height: 28px;
-}
-
-/*-- ESTILOS PARA BOTÓN GOOGLE --*/
-
+/* === Separador Google === */
 .divider {
     display: flex;
     align-items: center;
@@ -276,6 +168,7 @@ button:hover {
     font-size: 14px;
 }
 
+/* === Botón Google === */
 .google-btn {
     width: 100%;
     padding: 12px 20px;
@@ -291,7 +184,6 @@ button:hover {
     justify-content: center;
     gap: 10px;
     transition: all 0.3s ease;
-    margin-bottom: 15px;
 }
 
 .google-btn:hover {
@@ -300,15 +192,129 @@ button:hover {
     background: #f8f9ff;
 }
 
-.google-btn:active {
-    transform: translateY(1px);
+/* === Enlace olvidar contraseña === */
+.olvidar {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-.google-icon {
-    flex-shrink: 0;
+.olvidar a {
+    color: black;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+    cursor: pointer;
 }
 
-/* Estilos responsivos para pantallas menores a 768px */
+.olvidar a:hover {
+    color: #333;
+    text-decoration: underline;
+}
+
+/* === Títulos con pestañas (Inicio de sesion / registrarse) === */
+.titles {
+    display: inline-flex;
+    gap: 40px;
+    cursor: pointer;
+}
+
+.titles h2 {
+    font-size: 24px;
+    color: black;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.titles h2.inactive:hover,
+.titles h2.active:hover {
+    color: #555;
+    border-color: #5fbae9;
+}
+
+/* === Modal de Restablecimiento de Contraseña === */
+.modal-reset {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.3);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content-reset {
+    background-image: linear-gradient(-225deg, #E3FDF5 50%, #FFE6FA 50%);
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content-reset h1 {
+    margin-bottom: 10px;
+}
+
+.input-email {
+    margin: 20px 0;
+}
+
+.input-reset {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn-reset {
+    padding: 10px 20px;
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-reset:hover {
+    color: white;
+    background-color: black;
+}
+
+.close-reset {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: black;
+}
+
+.close-reset:hover {
+    color: black;
+}
+
+/* === Animaciones === */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* === Responsivo === */
 @media (max-width: 768px) {
 
     .container-iniciosesion,
@@ -329,66 +335,17 @@ button:hover {
         width: 100%;
     }
 
-    .h2-iniciosesion,
-    .h2 {
-        text-align: center;
-    }
-
-    .boton-inicio,
-    .boton-registro {
-        width: 100%;
-    }
-
     button {
         font-size: 14px;
-        height: 38px;
+        height: 40px;
     }
 
     input {
         font-size: 14px;
-    }
-
-    .imagenes-iniciosesion,
-    .imagenes-registro {
-        gap: 10px;
     }
 
     .imagenes-iniciosesion i,
     .imagenes-registro i {
         font-size: 20px;
-    }
-}
-
-/* Estilos para pantallas menores a 480px (móviles pequeños) */
-@media (max-width: 480px) {
-
-    .logo-iniciosesion img,
-    .logo-registro img {
-        width: 120px;
-        height: 120px;
-    }
-
-    .h2-iniciosesion,
-    h2 {
-        font-size: 20px;
-    }
-
-    .label-iniciosesion,
-    label {
-        font-size: 14px;
-    }
-
-    .input-iniciosesion,
-    input {
-        height: 32px;
-    }
-
-    button {
-        font-size: 13px;
-        height: 35px;
-    }
-
-    .olvidar a {
-        font-size: 0.85rem;
     }
 }

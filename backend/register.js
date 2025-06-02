@@ -1,23 +1,59 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const loginContainer = document.querySelector(".container-iniciosesion");
-  const registroContainer = document.querySelector(".container-registro");
-  
-  const btnRegistrarse = document.getElementById("btn-registrarse");
-  const btnVolverInicio = document.getElementById("btn-volver-inicio");
+    const loginContainer = document.querySelector(".container-iniciosesion");
+    const registroContainer = document.querySelector(".container-registro");
+    const containerPrincipal = document.querySelector(".container");
+    const modalReset = document.getElementById("reset-password");
+    const btnCloseReset = document.getElementById("close-reset");
+    const btnRegistrarse = document.getElementById("tab-signup");
+    const btnIniciarsesion = document.getElementById("tab-login");
+    const btnReset = document.getElementById("reset");
+    const registroForm = document.getElementById("registroForm");
+    const checkboxTerminos = document.getElementById("terminos");
 
-  // Mostrar formulario de registro
-  btnRegistrarse.addEventListener("click", () => {
-    loginContainer.style.display = "none";
-    registroContainer.style.display = "flex";
-  });
+    // Mostrar formulario de registro
+    btnRegistrarse.addEventListener("click", () => {
+        loginContainer.style.display = "none";
+        registroContainer.style.display = "flex";
+    });
 
-  // Volver al formulario de inicio de sesión
-  btnVolverInicio.addEventListener("click", () => {
-    registroContainer.style.display = "none";
-    loginContainer.style.display = "flex";
-  });
+    // Mostrar formulario de inicio de sesión
+    btnIniciarsesion.addEventListener("click", () => {
+        registroContainer.style.display = "none";
+        loginContainer.style.display = "flex";
+    });
 
+    // Mostrar modal de Olvidaste tu contraseña y ocultar container principal
+    btnReset.addEventListener("click", () => {
+        containerPrincipal.style.display = "none";
+        modalReset.style.display = "flex";
+    });
+
+    // Cerrar el modal y volver a mostrar el container principal
+    btnCloseReset.addEventListener("click", () => {
+        modalReset.style.display = "none";
+        containerPrincipal.style.display = "block";
+    });
+
+    // Cerrar el modal al hacer clic fuera del contenido
+    window.addEventListener("click", (e) => {
+        if (e.target === modalReset) {
+            modalReset.style.display = "none";
+            containerPrincipal.style.display = "block";
+        }
+    });
+
+    // Validación de checkbox de términos en el formulario de registro
+    registroForm.addEventListener("submit", function (e) {
+        if (!checkboxTerminos.checked) {
+            e.preventDefault();
+            alert("Debes aceptar los términos, condiciones y políticas para registrarte.");
+        }
+    });
 });
+
+
+
+
 
 // Registro-Backend
 document.addEventListener("DOMContentLoaded", function () {
