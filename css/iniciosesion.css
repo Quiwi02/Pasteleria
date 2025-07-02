@@ -128,10 +128,11 @@ button,
     width: 100%;
     height: 45px;
     border-radius: 10px;
-    border: 1px solid black;
+    border: 2px solid black;
     background-color: white;
     color: black;
     font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
     margin-top: 10px;
     transition: all 0.3s ease;
@@ -143,6 +144,7 @@ button:hover,
 .registrarse:hover {
     background-color: black;
     color: white;
+    border-color: white;
     transform: translateY(2px);
 }
 
@@ -188,6 +190,7 @@ button:hover,
 
 .google-btn:hover {
     border-color: #4285f4;
+    color: #333;
     box-shadow: 0 2px 8px rgba(66, 133, 244, 0.15);
     background: #f8f9ff;
 }

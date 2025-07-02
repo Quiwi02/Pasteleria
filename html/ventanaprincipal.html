@@ -17,20 +17,46 @@
 </head>
 
 <body>
-    <!-- NUEVA NAVBAR UNIFICADA -->
-    <nav class="navbar-drossi">
+    <!-- HEADER / NUEVA NAVBAR UNIFICADA -->
+    <header>
+        <div class="container-navbar-drossi">
+            <div class="container drossi">
+                <div class="customer-support">
+                    <i class="fa-solid fa-headset"></i>
+                    <div class="content-customer-support">
+                        <span class="text">Soporte al cliente</span>
+                        <span class="number">123-456-7890</span>
+                    </div>
+                </div>
+            
+
+                <div class="logo-container">
+                    <h1>Tortas D'Rossi</h1>
+                </div>
+
+                <div class="container-user">
+                    <!-- Botón de inicio de sesión -->
+                    <i class="fa-solid fa-user"></i>
+
+                    <!-- Botón de carrito -->
+                    <i class="fa-solid fa-shopping-cart" onclick="toggleCarrito()"></i>
+                </div>
+            </div>
+        </div>
+    
         <div class="container-navbar">
-            <nav class="navbar container d-flex justify-content-between align-items-center py-2">
+            <nav class="navbar container">
                 <!-- Botón Menú -->
                 <button class="menu-btn" onclick="toggleMenu()">
                     <i class="fa-solid fa-bars"></i>
                 </button>
 
                 <!-- Menú de navegación -->
-                <ul class="menu list-unstyled d-none d-md-flex mb-0">
+                <ul class="menu">
+                    <li><a href="/html/ventanaprincipal.html">Inicio</a></li>
                     <li class="me-3"><a href="/html/pasteleria.html">Pastelería</a></li>
+                    <li><a href="/html/comentario.html">Comentario</a></li>
                     <li class="me-3"><a href="/html/cobertura.html">Cobertura</a></li>
-                    <li><a href="/html/iniciosesion.html">Inicio de sesión</a></li>
                 </ul>
 
                 <!-- Formulario de búsqueda -->
@@ -40,27 +66,9 @@
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
                 </form>
-
-                <!-- Carrito + Logo -->
-                <div class="d-flex align-items-center ms-3">
-                    <button class="cart-btn btn btn-outline-light me-2" onclick="toggleCarrito()">
-                        <i class="fa-solid fa-shopping-cart"></i>
-                    </button>
-                    <div class="logo-container">
-                        <img src="/imagen/logopasteleria.jpg" alt="Logo D'Rossi" class="logo" style="height: 40px;">
-                    </div>
-                </div>
             </nav>
-
-            <!-- Menú hamburguesa solo visible en móviles -->
-            <ul class="menu d-md-none mt-2 px-3">
-                <li><a href="/html/pasteleria.html">Pastelería</a></li>
-                <li><a href="/html/cobertura.html">Cobertura</a></li>
-                <li><a href="/html/iniciosesion.html">Inicio de sesión</a></li>
-            </ul>
         </div>
-    </nav>
-
+    </header>
 
     <!-- Sección de Carruseles -->
     <div class="container-fluid p-0 mt-3">
@@ -163,9 +171,9 @@
                 <div class="col-md-4 mb-3">
                     <h4>Síguenos</h4>
                     <div class="social-links">
-                        <a href="#" class="text-white me-2"><i class="fab fa-facebook-f fa-lg"></i></a>
-                        <a href="#" class="text-white me-2"><i class="fab fa-instagram fa-lg"></i></a>
-                        <a href="#" class="text-white me-2"><i class="fab fa-whatsapp fa-lg"></i></a>
+                        <a href="#" class="text-black me-2"><i class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="#" class="text-black me-2"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="text-black me-2"><i class="fab fa-whatsapp fa-lg"></i></a>
                     </div>
                 </div>
             </div>
